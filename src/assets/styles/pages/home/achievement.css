@@ -1,0 +1,143 @@
+/* Stats Bar - Modern Black & White */
+.stats-bar-modern {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #fff;
+}
+
+.stats-container-modern {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item-modern {
+  text-align: center;
+  position: relative;
+  padding: 24px 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+.stat-number-modern {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background-clip: text;
+  position: relative;
+  display: inline-block;
+}
+.stat-number-modern strong {
+  font-weight: 700 !important;
+}
+.stat-label-modern {
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+  position: relative;
+  color: #fff;
+}
+
+/* Decorative elements between items */
+.stat-item-modern:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 50px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .stats-container-modern {
+    gap: 32px;
+  }
+
+  .stat-number-modern {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .stats-container-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .stat-item-modern:not(:last-child)::after {
+    display: none;
+  }
+
+  .stat-number-modern {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-container-modern {
+    padding: 0 24px;
+    gap: 32px;
+  }
+
+  .stat-number-modern {
+    font-size: 1.5rem;
+  }
+
+  .stat-label-modern {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .stats-container-modern {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .stat-number-modern {
+    font-size: 1.5rem;
+  }
+
+  .stat-label-modern {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .stat-item-modern {
+    padding: 16px 0;
+  }
+}
+
+/* Animation for numbers */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-number-modern {
+  animation: countUp 0.6s ease-out forwards;
+}

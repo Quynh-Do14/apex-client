@@ -1,0 +1,548 @@
+.modernSliderContainer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0c1a2d 0%, #0f2442 50%, #091423 100%);
+}
+
+.sliderWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.slideItem {
+  position: relative;
+  aspect-ratio: 13/4;
+}
+
+.slideBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 10s ease-out;
+}
+
+/* Slick slider active state - using global for slick classes */
+.slickActive .slideBackground {
+  transform: scale(1.05);
+}
+
+.slideContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 40px;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slideBadge {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0;
+  animation: fadeInDown 0.8s ease 0.3s forwards;
+}
+
+.badgeText {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #ffd700;
+  opacity: 0.9;
+}
+
+.badgeLine {
+  width: 60px;
+  height: 2px;
+  background: #ffd700;
+  opacity: 0.7;
+}
+
+.mainContent {
+  max-width: 700px;
+}
+
+.titleGroup {
+  margin-bottom: 30px;
+}
+
+.slideTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #fff, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease 0.5s forwards;
+}
+
+.slideSubtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease 0.7s forwards;
+}
+
+.slideDescription {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease 0.9s forwards;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease 1.3s forwards;
+}
+
+.primaryCta,
+.secondaryCta {
+  padding: 16px 36px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.primaryCta {
+  background: #ffd700;
+  color: #000;
+  border: none;
+}
+
+.primaryCta:hover {
+  background: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.secondaryCta {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.secondaryCta:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.ctaArrow svg {
+  transition: transform 0.3s ease;
+}
+
+.primaryCta:hover .ctaArrow svg {
+  transform: translateX(5px);
+}
+
+.customDotsContainer {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.customDots {
+  display: flex !important;
+  flex-direction: column;
+  gap: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.customDots li {
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.customDots li button {
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.dotIndicator {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  padding: 10px 0;
+}
+
+.dotIndicator:hover {
+  opacity: 0.8;
+}
+
+.dotIndicatorActive {
+  opacity: 1;
+}
+
+.dotNumber {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  min-width: 30px;
+  text-align: right;
+}
+
+.dotProgress {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.dotIndicatorActive .dotProgress::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #ffd700;
+  animation: progressBar 5s linear;
+}
+
+.statsBar {
+  background: #000;
+  padding: 40px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.statsContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.statItem {
+  text-align: center;
+  position: relative;
+}
+
+.statItem:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffd700;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.statSuffix {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sliderLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #f0f0f0;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .contentWrapper {
+    padding: 0 30px;
+  }
+
+  .slideTitle {
+    font-size: 3rem;
+  }
+
+  .statsContainer {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slideItem {
+    /* height: 30vh;
+    min-height: 465px; */
+  }
+}
+
+@media (max-width: 992px) {
+  .slideItem {
+    /* height: 80vh;
+    min-height: 500px; */
+  }
+
+  .slideTitle {
+    font-size: 2.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.3rem;
+  }
+
+  .customDotsContainer {
+    right: 30px;
+  }
+
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .statItem:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .slideItem {
+    /* height: 30vh;
+    min-height: 350px; */
+  }
+
+  .contentWrapper {
+    padding: 0 20px;
+  }
+
+  .slideBadge {
+    top: 30px;
+    left: 20px;
+  }
+
+  .slideTitle {
+    font-size: 2rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .slideDescription {
+    font-size: 1rem;
+  }
+
+  .slideCounter {
+    bottom: 30px;
+    right: 20px;
+    font-size: 2rem;
+  }
+
+  .customNavigation {
+    bottom: 30px;
+    left: 20px;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .primaryCta,
+  .secondaryCta {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .customDotsContainer {
+    display: none;
+  }
+
+  .statsBar {
+    padding: 30px 0;
+  }
+
+  .statsContainer {
+    padding: 0 20px;
+    gap: 30px;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .slideItem {
+    /* height: 20vh;
+    min-height: 180px; */
+  }
+
+  .slideTitle {
+    font-size: 1.8rem;
+  }
+
+  .featuresGrid {
+    gap: 12px;
+  }
+
+  .featureText {
+    font-size: 0.9rem;
+  }
+
+  .statsContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .statItem::after {
+    display: none;
+  }
+}
+
+/* Touch Device Optimization */
+@media (hover: none) and (pointer: coarse) {
+  .primaryCta,
+  .secondaryCta {
+    min-height: 50px;
+    padding: 18px 30px;
+  }
+
+  .dotIndicator {
+    padding: 15px 0;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .slideBackground,
+  .primaryCta,
+  .secondaryCta,
+  .dotIndicator {
+    transition: none !important;
+  }
+
+  .slideBackground {
+    transform: scale(1) !important;
+  }
+
+  .slideTitle,
+  .slideSubtitle,
+  .slideDescription,
+  .featuresGrid,
+  .ctaGroup,
+  .slideCounter,
+  .slideBadge,
+  .navInfo {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .dotProgress::before {
+    animation: none !important;
+    width: 100%;
+  }
+}

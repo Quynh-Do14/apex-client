@@ -1,0 +1,423 @@
+@import 'tailwindcss';
+
+* {
+  font-family: 'Work Sans', sans-serif;
+  font-optical-sizing: auto;
+}
+
+/* Common Responsive CSS */
+
+/* Large Desktop (1600px and up) */
+@media (min-width: 1600px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 40px 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop (1200px to 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 40px 40px;
+    max-width: 100%;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 40px 40px;
+    max-width: 100%;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 40px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Tablet (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 60px 30px;
+    max-width: 100%;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 60px 30px;
+    max-width: 100%;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* Mobile Portrait (under 576px) */
+@media (max-width: 576px) {
+  .padding-common,
+  .main-layout-client .header-layout-client,
+  .main-layout-client .footer-layout-client {
+    padding: 20px 20px;
+    max-width: 100%;
+  }
+  .padding-section {
+    width: 100%;
+    padding: 0 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* scroll custom */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 10px;
+}
+
+.home-page-loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  z-index: 99999;
+}
+
+.text-truncate,
+.text-truncate-2,
+.text-truncate-3,
+.text-truncate-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* Sửa từ 'initial' để giữ xuống dòng đúng */
+}
+
+.text-truncate {
+  -webkit-line-clamp: 1;
+}
+
+.text-truncate-2 {
+  -webkit-line-clamp: 2;
+}
+
+.text-truncate-3 {
+  -webkit-line-clamp: 3;
+}
+
+.text-truncate-4 {
+  -webkit-line-clamp: 4;
+}
+
+/* Header */
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.pageHeader .badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700, #ffa500);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.pageHeader .badgeText {
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.pageHeader .headerTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #060606;
+  line-height: 1.2;
+}
+
+.pageHeader .headerTitle .highlight {
+  color: #ffd700;
+  position: relative;
+}
+
+.pageHeader .headerTitle .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+}
+
+@media (max-width: 1600px) {
+  .pageHeader .headerTitle {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pageHeader .headerTitle {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 992px) {
+  .pageHeader .headerTitle {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .pageHeader .headerTitle {
+    font-size: 2rem;
+  }
+}
+
+.agency-popup {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+.agency-popup strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #111827;
+  font-size: 15px;
+}
+
+.popup-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 6px 0;
+}
+
+.popup-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #4f46e5;
+  opacity: 0.8;
+}
+
+.youtube-thumbnail {
+  aspect-ratio: 16/9;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Video  */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  transform: scale(0.98);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  border: 4px solid rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (min-width: 577px) {
+  .video-container {
+    padding-bottom: 40.25%; /* 16:9 Aspect Ratio */
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .video-container {
+    padding-bottom: 60.25%; /* 16:9 Aspect Ratio */
+  }
+}
+
+.video-container:hover {
+  transform: scale(0.99);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.video-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.video-container #youtube-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: inherit;
+  z-index: 2;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.video-container {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+/* Section Header */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  padding: 0 10px;
+}
+.section-header strong {
+  font-weight: 800;
+}
+.section-header .header-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #ffd700, #ffa500);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.section-header .badge-text {
+  color: #000;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-header .main-title-custom {
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.section-header .main-title {
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.section-header .main-title .highlight {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  display: inline-block;
+}
+.section-header.dark .subtitle {
+  color: #aaa;
+}
+.section-header.light .subtitle {
+  color: #666;
+}
+.section-header .subtitle {
+  line-height: 1.5;
+  margin: 0;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  .section-header .main-title-custom,
+  .section-header .main-title {
+    font-size: 1.5rem;
+  }
+
+  .section-header .subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header .main-title-custom,
+  .section-header .main-title {
+    font-size: 1.2rem;
+  }
+
+  .section-header .subtitle {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tùy chọn: Responsive cho màn hình lớn hơn */
+@media (min-width: 1200px) {
+  .section-header .main-title-custom,
+  .section-header .main-title {
+    font-size: 2rem;
+  }
+
+  .section-header .subtitle {
+    font-size: 1.1rem;
+  }
+}

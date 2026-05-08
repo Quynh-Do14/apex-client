@@ -1,0 +1,519 @@
+.agencyContainer {
+  background: #141414;
+  position: relative;
+}
+.agencyContainer .agencyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin: 20px 0;
+}
+
+.agencyContainer .agencyMain {
+  margin: 0 auto;
+  max-width: 1600px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 8px;
+}
+
+.leftSide {
+  height: 70vh;
+  overflow: auto;
+}
+.leftSide .leftSideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.agencyCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: stretch;
+  gap: 20px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.agencyCard.active {
+  border-color: #3b82f6;
+  background: #ffdd71;
+  box-shadow: 0 4px 20px rgba(255, 187, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 204, 0, 0.4);
+}
+.agencyCard.active .viewBtn {
+  border: 2px solid #4d4d4d;
+}
+.agencyCard.active .cardBadge {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+.agencyCard.active .cardName {
+  color: #1d4ed8;
+}
+
+.agencyCard.active .infoIcon {
+  color: #3b82f6;
+}
+
+.agencyCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.1),
+    0 16px 48px rgba(0, 0, 0, 0.12);
+  border-color: #3b82f6;
+}
+
+.agencyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.agencyCard:hover::before {
+  opacity: 1;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.cardImage {
+  position: relative;
+  flex: 0 0 280px;
+  height: 260px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin: 20px 0 20px 20px;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.1), transparent);
+  z-index: 1;
+}
+
+.cardImageImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agencyCard:hover .cardImageImg {
+  transform: scale(1.08);
+}
+
+.cardRating {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 6px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.starIcon {
+  color: #f59e0b;
+}
+
+.ratingText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.cardContent {
+  flex: 1;
+  padding: 20px 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cardName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #111827 0%, #374151 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cardStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: #10b98110;
+  border-radius: 20px;
+  border: 1px solid #10b98130;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.statusText {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.cardDescription {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.infoIconWrapper {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.infoIcon {
+  color: #4b5563;
+}
+
+.infoContent {
+  flex: 1;
+}
+
+.infoLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px 0;
+}
+
+.cardAddress,
+.cardPhone {
+  font-size: 1rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+.cardFooter {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.directionBtn,
+.viewBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.directionBtn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  flex: 1;
+}
+
+.directionBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.viewBtn {
+  background: transparent;
+  color: #4b5563;
+  border: 2px solid #e5e7eb;
+  flex: 1;
+}
+
+.viewBtn:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-2px);
+}
+
+.directionIcon,
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.directionBtn:hover .directionIcon {
+  transform: rotate(-10deg);
+}
+
+.viewBtn:hover .arrowIcon {
+  transform: translateX(4px);
+}
+
+/* Right side chỉ sửa border */
+.rightSide {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02), 0 4px 8px rgba(0, 0, 0, 0.04),
+    0 8px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #3b82f6;
+  height: 70vh;
+}
+
+/* Responsive Design */
+
+/* Tablet (1024px) */
+@media (max-width: 1024px) {
+  .agencyContainer .agencyMain {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .rightSide {
+    order: -1;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid #3b82f6;
+  }
+
+  .cardImage {
+    flex: 0 0 240px;
+    height: 220px;
+  }
+}
+
+/* Tablet nhỏ (900px) */
+@media (max-width: 900px) {
+  .agencyCard {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .cardImage {
+    flex: none;
+    width: calc(100% - 40px);
+    height: 280px;
+    margin: 20px auto 0;
+  }
+
+  .cardContent {
+    padding: 24px;
+  }
+
+  .cardBadge {
+    top: 28px;
+    left: 28px;
+  }
+}
+
+/* Mobile (768px) */
+@media (max-width: 768px) {
+  .agencyContainer {
+    padding: 32px 0;
+  }
+
+  .agencyContainer .agencyMain {
+    gap: 24px;
+  }
+
+  .leftSide {
+    gap: 20px;
+  }
+
+  .cardImage {
+    height: 240px;
+  }
+
+  .cardName {
+    font-size: 1.35rem;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .agencyCard {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile nhỏ (480px) */
+@media (max-width: 480px) {
+  .agencyContainer {
+    padding: 24px 0;
+  }
+
+  .agencyContainer .agencyMain {
+    gap: 20px;
+  }
+
+  .cardImage {
+    height: 200px;
+  }
+
+  .cardName {
+    font-size: 1.25rem;
+  }
+
+  .cardContent {
+    padding: 20px;
+  }
+
+  .infoIconWrapper {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile rất nhỏ (360px) */
+@media (max-width: 360px) {
+  .agencyContainer .agencyMain {
+    padding: 0 12px;
+  }
+
+  .cardImage {
+    height: 180px;
+  }
+
+  .cardName {
+    font-size: 1.1rem;
+  }
+
+  .cardAddress,
+  .cardPhone {
+    font-size: 0.9rem;
+  }
+
+  .cardFooter {
+    gap: 8px;
+  }
+
+  .directionBtn,
+  .viewBtn {
+    padding: 10px 16px;
+    font-size: 0.875rem;
+  }
+}
+
+.noDataContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+}
+
+.noDataIcon {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.noDataTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.noDataDescription {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 24px;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.resetButton:hover {
+  background: #4338ca;
+}

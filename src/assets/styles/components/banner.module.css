@@ -1,0 +1,17 @@
+/* ImageBanner.module.css */
+.bannerContainer {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/5;
+  position: relative;
+  overflow: hidden;
+  background: #000; /* Fallback màu nền */
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}

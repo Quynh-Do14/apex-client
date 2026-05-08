@@ -1,0 +1,27 @@
+.breadcumb_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  overflow-x: auto;
+}
+
+.breadcumb_container::-webkit-scrollbar {
+  display: none;
+}
+
+.breadcumb_container .font_style_white {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.breadcumb_container .font_style_black {
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #141414;
+  white-space: nowrap;
+}

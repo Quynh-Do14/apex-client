@@ -1,0 +1,122 @@
+export class Endpoint {
+    static Auth = class {
+        static Login = "/auth/login"
+        static Register = "auth/register"
+        static Profile = "/users/me/profile"
+        static RefreshToken = "/auth/refresh-token"
+    }
+    static Banner = class {
+        static Get = "/banner"
+        static GetById = "/banner"
+        static Add = "/banner"
+        static Update = "/banner"
+        static Delete = "/banner"
+    }
+    static Product = class {
+        static Get = "/product"
+        static GetById = "/product"
+        static Add = "/product"
+        static Update = "/product"
+        static Delete = "/product"
+    }
+    static ProductSeries = class {
+        static Get = "/product-series"
+        static GetById = "/product-series"
+        static Add = "/product-series"
+        static Update = "/product-series"
+        static Delete = "/product-series"
+    }
+    static Series = class {
+        static Get = "/series"
+        static GetById = "/series"
+        static Add = "/series"
+        static Update = "/series"
+        static Delete = "/series"
+    }
+    static Category = class {
+        static Get = "/category"
+        static GetById = "/category"
+        static Add = "/category"
+        static Update = "/category"
+        static Delete = "/category"
+    }
+    static Blog = class {
+        static Get = "/blog"
+        static GetById = "/blog"
+        static Add = "/blog"
+        static Update = "/blog"
+        static Delete = "/blog"
+    }
+    static Agency = class {
+        static Get = "/agency"
+        static GetById = "/agency"
+        static Add = "/agency"
+        static Update = "/agency"
+        static Delete = "/agency"
+    }
+    static AgencyCategory = class {
+        static Get = "/agency-category"
+        static GetById = "/agency-category"
+        static Add = "/agency-category"
+        static Update = "/agency-category"
+        static Delete = "/agency-category"
+    }
+    static BlogCategory = class {
+        static Get = "/blog-category"
+        static GetById = "/blog-category"
+        static Add = "/blog-category"
+        static Update = "/blog-category"
+        static Delete = "/blog-category"
+    }
+    static Brand = class {
+        static Get = "/brand"
+        static GetById = "/brand"
+        static Add = "/brand"
+        static Update = "/brand"
+        static Delete = "/brand"
+    }
+    static User = class {
+        static Get = "/users"
+        static GetById = "/users"
+        static Create = "/users"
+        static Update = "/users"
+        static Delete = "/users"
+    }
+    static APIDistrict = class {
+        static Get = "https://provinces.open-api.vn/api/v1/p/"
+    }
+    static Video = class {
+        static Get = "/video"
+        static GetById = "/video"
+        static Add = "/video"
+        static Update = "/video"
+        static Delete = "/video"
+    }
+    static Contact = class {
+        static Get = "/contact"
+        static GetById = "/contact"
+        static Add = "/contact"
+    }
+    static Slogan = class {
+        static Get = "/slogan"
+        static GetById = "/slogan"
+        static Add = "/slogan"
+        static Update = "/slogan"
+        static Delete = "/slogan"
+    }
+    static ConfigPage = class {
+        static Get = "/config-page"
+        static GetById = "/config-page"
+        static Add = "/config-page"
+        static Update = "/config-page"
+        static UpdateIndex = "/config-page/update-index"
+        static Delete = "/config-page"
+    }
+    static ContentPage = class {
+        static Get = "/content-page"
+        static GetById = "/content-page"
+        static Add = "/content-page"
+        static Update = "/content-page"
+        static Delete = "/content-page"
+    }
+}

@@ -1,0 +1,107 @@
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 4px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Image skeleton */
+.cardImageSkeleton {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 8px;
+}
+
+/* Category skeleton */
+.categoryTextSkeleton {
+  display: inline-block;
+  width: 80px;
+  height: 24px;
+}
+
+/* Title skeleton */
+.cardTitleSkeleton {
+  height: 24px;
+  margin-bottom: 8px;
+  width: 90%;
+}
+
+.cardTitleSkeleton.short {
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+/* Excerpt skeleton */
+.cardExcerptSkeleton {
+  height: 16px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.cardExcerptSkeleton.short {
+  width: 80%;
+}
+
+.cardExcerptSkeleton.veryShort {
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+/* Meta skeleton */
+.metaIconSkeleton {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.metaTextSkeleton {
+  display: inline-block;
+  width: 100px;
+  height: 16px;
+}
+
+/* Button skeleton */
+.cardReadBtnSkeleton {
+  display: inline-flex;
+  align-items: center;
+  width: 140px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+.btnTextSkeleton {
+  display: inline-block;
+  width: 100px;
+  height: 20px;
+}
+
+/* Optional: Adjust styles for different screen sizes */
+@media (max-width: 768px) {
+  .cardImageSkeleton {
+    height: 250px;
+  }
+
+  .cardTitleSkeleton {
+    height: 20px;
+  }
+
+  .cardExcerptSkeleton {
+    height: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardImageSkeleton {
+    height: 200px;
+  }
+}

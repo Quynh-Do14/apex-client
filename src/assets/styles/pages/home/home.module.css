@@ -1,0 +1,144 @@
+.homePageContainer {
+  background: #ffffff;
+}
+.homePageContainer .darkBackground {
+  background: #0a0a0a;
+}
+.homePageContainer .darkBackground::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+/* bannerParallax.module.css */
+.homePageContainer .bannerFixed {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.homePageContainer .bannerFixed .blurTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+.homePageContainer .bannerFixed .blurBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.25), transparent);
+  backdrop-filter: blur(3px);
+  pointer-events: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 1366px) {
+  .homePageContainer .bannerFixed {
+    height: 500px;
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .homePageContainer .bannerFixed {
+    height: 450px;
+    background-attachment: scroll; /* Better performance on tablets */
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homePageContainer .bannerFixed {
+    height: 350px;
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 60px;
+    backdrop-filter: blur(2px); /* Reduced blur for better performance */
+  }
+}
+
+@media (max-width: 576px) {
+  .homePageContainer .bannerFixed {
+    height: 250px;
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 40px;
+    backdrop-filter: blur(1px);
+  }
+}
+
+@media (max-width: 480px) {
+  .homePageContainer .bannerFixed {
+    height: 200px;
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 30px;
+  }
+}
+
+/* For landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .homePageContainer .bannerFixed {
+    height: 300px;
+  }
+
+  .homePageContainer .bannerFixed .blurTop,
+  .homePageContainer .bannerFixed .blurBottom {
+    height: 50px;
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .homePageContainer .bannerFixed {
+    background-size: cover;
+    background-attachment: scroll; /* Fixes blurry images on some high-dpi devices */
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .homePageContainer .bannerFixed {
+    background-attachment: scroll;
+  }
+}

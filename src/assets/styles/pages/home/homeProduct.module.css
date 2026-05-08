@@ -1,0 +1,468 @@
+.productSection {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 0;
+  color: white;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Content Container */
+.galleryContainer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Header Section */
+.galleryContainer .galleryHeader {
+  text-align: center;
+  position: relative;
+  padding: 0 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.galleryContainer .galleryHeader .mainTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #ffd700 50%, #fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 3px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: inline-block;
+}
+
+.galleryContainer .galleryHeader .mainTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  border-radius: 2px;
+}
+
+/* Optional: Add smooth entrance animation */
+@keyframes elegantFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.galleryHeader {
+  animation: elegantFadeIn 0.8s ease-out;
+}
+
+/* Gallery Grid */
+.productSection .galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.galleryItem {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.galleryItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  border-radius: 20px;
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.galleryItem:hover::before {
+  opacity: 1;
+}
+
+.galleryItem:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 215, 0, 0.3);
+}
+
+.itemMedia {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.thumbnailWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.galleryItem:hover .thumbnailWrapper {
+  transform: scale(1.1);
+}
+
+.mediaOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 20px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.7) 60%,
+    transparent 100%
+  );
+  opacity: 1;
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.galleryItem:hover .mediaOverlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(0, 0, 0, 0.85) 60%,
+    transparent 100%
+  );
+  padding-bottom: 25px;
+}
+
+.contentOverlay {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.4s ease;
+}
+
+.galleryItem:hover .contentOverlay {
+  transform: translateY(-5px);
+}
+
+.productSection .itemTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  line-height: 1.4;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.productSection .itemTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ffd700, transparent);
+  transition: width 0.3s ease;
+}
+
+.galleryItem:hover .itemTitle::after {
+  width: 100%;
+}
+
+.productSection .itemPrice {
+  font-weight: 600;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.productSection .salePrice {
+  color: #ffd700;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.productSection .salePrice::before {
+  content: '✨';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.galleryItem:hover .salePrice::before {
+  opacity: 1;
+}
+
+.productSection .originalPrice {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  text-decoration: line-through;
+  font-weight: 400;
+  position: relative;
+}
+
+.productSection .normalPrice {
+  color: #ffd700;
+  font-size: 1.3rem;
+  font-weight: 800;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* Card Badge for Sale Items */
+.galleryItem::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffd700, #ff8c00);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.galleryItem[data-sale="true"]::after {
+  content: 'SALE';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Price Animation */
+@keyframes pricePop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.galleryItem:hover .salePrice,
+.galleryItem:hover .normalPrice {
+  animation: pricePop 0.5s ease;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .productSection {
+    padding: 30px 15px;
+    gap: 30px;
+    border-radius: 20px;
+  }
+  
+  .productSection .galleryGrid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 5px;
+  }
+  
+  .productSection .galleryGrid2Col,
+  .productSection .galleryGrid3Col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .productSection .itemTitle {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  
+  .productSection .salePrice,
+  .productSection .normalPrice {
+    font-size: 1.1rem;
+  }
+  
+  .productSection .originalPrice {
+    font-size: 0.85rem;
+  }
+  
+  .mediaOverlay {
+    padding: 20px 12px 12px;
+  }
+  
+  .galleryContainer .galleryHeader .mainTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .productSection .galleryHeader {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .productSection .headerRight {
+    align-self: flex-start;
+  }
+
+  .productSection .galleryGrid,
+  .productSection .galleryGrid2Col,
+  .productSection .galleryGrid3Col {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .productSection .salePrice,
+  .productSection .normalPrice {
+    font-size: 1.2rem;
+  }
+
+  .productSection .originalPrice {
+    font-size: 0.9rem;
+  }
+
+  .productSection .itemPrice {
+    gap: 8px;
+    margin: 6px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .productSection .galleryGrid,
+  .productSection .galleryGrid2Col,
+  .productSection .galleryGrid3Col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .productSection .itemTitle {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+  }
+
+  .productSection .salePrice,
+  .productSection .normalPrice {
+    font-size: 1rem;
+  }
+
+  .productSection .originalPrice {
+    font-size: 0.8rem;
+  }
+
+  .productSection .itemPrice {
+    gap: 6px;
+    margin: 4px 0;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .productSection {
+    padding: 20px 12px;
+  }
+  
+  .productSection .galleryGrid2Col,
+  .productSection .galleryGrid3Col {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .productSection .itemTitle {
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  .productSection .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .productSection .viewAllBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .productSection .itemMedia {
+    height: auto;
+  }
+
+  .itemMedia2Col {
+    height: auto;
+  }
+
+  .itemMedia3Col {
+    height: auto;
+  }
+
+  .productSection .salePrice,
+  .productSection .normalPrice {
+    font-size: 0.9rem;
+  }
+
+  .productSection .originalPrice {
+    font-size: 0.75rem;
+  }
+
+  .productSection .itemPrice {
+    gap: 5px;
+    margin: 3px 0;
+  }
+  
+  .mediaOverlay {
+    padding: 15px 10px 10px;
+  }
+  
+  .galleryContainer .galleryHeader .mainTitle {
+    font-size: 1.5rem;
+  }
+}

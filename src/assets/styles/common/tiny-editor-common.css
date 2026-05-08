@@ -1,0 +1,298 @@
+.tiny-style h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.9rem;
+}
+
+.tiny-style h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.tiny-style h3 {
+  font-size: 1.25rem; /* Giảm từ 1.17rem xuống 1.25rem cho đẹp hơn */
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  color: #333;
+}
+
+.tiny-style h4 {
+  font-size: 1.125rem; /* Giảm từ 1.5rem xuống 1.125rem */
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #444;
+}
+
+.tiny-style h5 {
+  font-size: 1rem; /* Giảm từ 1.25rem xuống 1rem */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.tiny-style h6 {
+  font-size: 0.875rem; /* Giảm từ 1rem xuống 0.875rem */
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #666;
+  text-transform: uppercase;
+}
+
+/* Paragraphs */
+.tiny-style p {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+/* Text formatting */
+.tiny-style strong,
+.tiny-style b {
+  font-weight: 700;
+  color: #000;
+}
+
+.tiny-style em,
+.tiny-style i {
+  font-style: italic;
+}
+
+.tiny-style u {
+  text-decoration: underline;
+}
+
+.tiny-style strike,
+.tiny-style s,
+.tiny-style del {
+  text-decoration: line-through;
+}
+
+/* Links */
+.tiny-style a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tiny-style a:hover {
+  color: #004999;
+  border-bottom-color: #004999;
+}
+
+/* Lists */
+.tiny-style ul,
+.tiny-style ol {
+  margin-bottom: 0.75rem;
+  padding-left: 2rem;
+}
+
+.tiny-style ul {
+  list-style-type: disc;
+}
+
+.tiny-style ul ul {
+  list-style-type: circle;
+}
+
+.tiny-style ul ul ul {
+  list-style-type: square;
+}
+
+.tiny-style ol {
+  list-style-type: decimal;
+}
+
+.tiny-style ol ol {
+  list-style-type: lower-alpha;
+}
+
+.tiny-style ol ol ol {
+  list-style-type: lower-roman;
+}
+
+.tiny-style li {
+  margin-bottom: 0.75rem;
+}
+
+.tiny-style li > ul,
+.tiny-style li > ol {
+  margin: 0.3rem 0;
+}
+
+/* Blockquotes */
+.tiny-style blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: #f9f9f9;
+  border-left: 4px solid #ccc;
+  font-style: italic;
+  color: #555;
+  border-radius: 0 8px 8px 0;
+}
+
+.tiny-style blockquote p {
+  margin: 0.5rem 0;
+}
+
+.tiny-style blockquote footer {
+  margin-top: 1rem;
+  font-style: normal;
+  text-align: right;
+  color: #777;
+}
+
+/* Code blocks */
+.tiny-style pre {
+  background: #282c34;
+  color: #abb2bf;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+}
+
+.tiny-style code {
+  background: #f0f0f0;
+  color: #e01e5a;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.tiny-style pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Tables */
+.tiny-style table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+.tiny-style td,
+.tiny-style th {
+  border: 1px solid #bcbcbc;
+  padding: 8px;
+}
+.tiny-style th {
+  background-color: #f2f2f2;
+}
+
+/* Images */
+.tiny-style img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tiny-style figure {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.tiny-style figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Horizontal rule */
+.tiny-style hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #ddd, transparent);
+  margin: 2rem 0;
+}
+
+/* Alignment classes từ TinyMCE */
+.tiny-style .align-left {
+  text-align: left;
+}
+
+.tiny-style .align-center {
+  text-align: center;
+}
+
+.tiny-style .align-right {
+  text-align: right;
+}
+
+.tiny-style .align-justify {
+  text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tiny-style {
+    padding: 15px;
+  }
+
+  .tiny-style h1 {
+    font-size: 1.75rem; /* 2rem * 0.875 */
+    margin: 0 0 0.75rem 0;
+  }
+  .tiny-style h2 {
+    font-size: 1.35rem; /* 1.5rem * 0.9 */
+    margin: 0 0 0.75rem 0;
+  }
+  .tiny-style h3 {
+    font-size: 1.15rem; /* 1.25rem * 0.92 */
+    margin: 0 0 0.75rem 0;
+  }
+  .tiny-style h4 {
+    font-size: 1rem; /* 1.125rem * 0.89 */
+    margin: 0 0 0.75rem 0;
+  }
+  .tiny-style h5 {
+    font-size: 0.9rem; /* 1rem * 0.9 */
+    margin: 0 0 0.75rem 0;
+  }
+  .tiny-style h6 {
+    font-size: 0.8rem; /* 0.875rem * 0.91 */
+    margin: 0 0 0.75rem 0;
+  }
+
+  .tiny-style table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .tiny-style pre {
+    padding: 1rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .tiny-style {
+    max-width: 100%;
+    padding: 0;
+    color: #000;
+  }
+
+  .tiny-style a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .tiny-style pre {
+    background: #fff;
+    border: 1px solid #000;
+    color: #000;
+  }
+
+  .tiny-style img {
+    max-width: 100%;
+    box-shadow: none;
+  }
+}

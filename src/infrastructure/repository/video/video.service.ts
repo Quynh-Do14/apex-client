@@ -1,0 +1,117 @@
+import { Endpoint } from "@/core/common/apiLink";
+import { FailMessage, SuccessMessage } from "@/infrastructure/common/toast/message";
+import { VideoInterface, VideoParams } from "@/infrastructure/interface/video/video.interface";
+import { RequestService } from "@/infrastructure/utils/response";
+
+class VideoService {
+    async GetVideo(params: VideoParams, setLoading: Function) {
+        setLoading(true)
+        try {
+            return await RequestService
+                .get(Endpoint.Video.Get, {
+                    ...params
+                })
+                .then(response => {
+                    if (response) {
+                        return response
+                    }
+                    setLoading(false)
+                    return response;
+                });
+        } catch (error) {
+            console.error(error)
+        } finally {
+            setLoading(false);
+        }
+    };
+    async GetVideoById(id: string, setLoading: Function) {
+        setLoading(true)
+        try {
+            return await RequestService
+                .get(`${Endpoint.Video.GetById}/${id}`)
+                .then(response => {
+                    if (response) {
+                        return response
+                    }
+                    setLoading(false)
+                    return response;
+                });
+        } catch (error) {
+            console.error(error)
+        } finally {
+            setLoading(false);
+        }
+    };
+
+
+    async AddVideoAdmin(data: VideoInterface, onBack: Function, setLoading: Function) {
+        setLoading(true)
+        try {
+            return await RequestService
+                .postForm(Endpoint.Video.Add,
+                    data
+                )
+                .then(response => {
+                    if (response) {
+                        onBack()
+                        SuccessMessage("Thêm mới thành công", "")
+                        return response
+                    }
+                    setLoading(false)
+                    return response;
+                });
+        } catch (error) {
+            FailMessage("Thêm mới không thành công", "Vui lòng kiểm tra thông tin")
+            console.error(error)
+        } finally {
+            setLoading(false);
+        }
+    }
+    async UpdateVideoAdmin(id: string, data: VideoInterface, onBack: Function, setLoading: Function) {
+        setLoading(true)
+        try {
+            return await RequestService
+                .putForm(`${Endpoint.Video.Update}/${id}`,
+                    data
+                )
+                .then(response => {
+                    if (response) {
+                        onBack()
+                        SuccessMessage("Cập nhật thành công", "")
+                        return response
+                    }
+                    setLoading(false)
+                    return response;
+                });
+        } catch (error) {
+            FailMessage("Cập nhật không thành công", "Vui lòng kiểm tra thông tin")
+            console.error(error)
+        } finally {
+            setLoading(false);
+        }
+    }
+    async DeleteVideoAdmin(id: string, setLoading: Function) {
+        setLoading(true)
+        try {
+            return await RequestService
+                .delete(`${Endpoint.Video.Delete}/${id}`)
+                .then(response => {
+                    if (response) {
+                        SuccessMessage("Xóa thành công", "")
+                        return response
+                    }
+                    setLoading(false)
+                    return response;
+                });
+        } catch (error) {
+            FailMessage("Xóa không thành công", "Vui lòng kiểm tra thông tin")
+            console.error(error)
+        } finally {
+            setLoading(false);
+        }
+    }
+}
+
+const videoService = new VideoService();
+
+export default videoService;

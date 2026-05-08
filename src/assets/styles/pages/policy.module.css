@@ -1,0 +1,243 @@
+.policyContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.policyContainer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.policyContainer .title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.policyContainer .heading {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.policyContainer .paragraph {
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* .policyContainer .list {
+  margin: 12px 0 16px 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.policyContainer .list li {
+  font-size: 16px;
+  margin-bottom: 8px;
+  padding-left: 8px;
+  line-height: 1.6;
+  color: #4a5568;
+  position: relative;
+} */
+
+/* Chấm tròn đơn giản */
+.policyContainer .list li::before {
+  content: '•';
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: -16px;
+  font-size: 18px;
+}
+
+.policyContainer .tableMedia {
+  width: 100%;
+  max-width: 100%;
+  margin: 48px auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.policyContainer .tableMedia tbody {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.policyContainer .tableMedia tr {
+  display: contents;
+}
+
+.policyContainer .tableMedia td {
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 32px 20px;
+  background: white;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.policyContainer .tableMedia td:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.policyContainer .tableMedia img {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.policyContainer .tableMedia td:hover img {
+  transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .tableMedia tbody {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .policyContainer .title {
+    font-size: 24px;
+  }
+
+  .policyContainer .heading {
+    font-size: 20px;
+  }
+
+  .policyContainer .tableMedia tbody {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .policyContainer .tableMedia td {
+    padding: 24px 16px;
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .policyContainer .tableMedia tbody {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .policyContainer .tableMedia td {
+    padding: 20px 12px;
+    min-height: 100px;
+  }
+
+  .policyContainer .tableMedia img {
+    max-width: 80px;
+  }
+}
+
+.policyContainer .toc {
+  margin-bottom: 32px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.policyContainer .tocTitle {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a202c;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.policyContainer .tocList {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.policyContainer .tocList li {
+  position: relative;
+  line-height: 1.5;
+}
+
+.policyContainer .tocList a {
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 15px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Hover effect - giống Word */
+.policyContainer .tocList a:hover {
+  background-color: #f7fafc;
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+/* Active effect */
+.policyContainer .tocList a:active {
+  background-color: #edf2f7;
+  transform: translateY(1px);
+}
+
+/* Focus effect */
+.policyContainer .tocList a:focus {
+  outline: 2px solid #4299e1;
+  outline-offset: 1px;
+}
+
+/* Nested levels - giống Word */
+.policyContainer .tocList ul {
+  list-style: none;
+  padding-left: 24px;
+  margin: 4px 0 8px 0;
+}
+
+.policyContainer .tocList ul li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.policyContainer .tocList ul li::before {
+  content: counters(toc-counter, '.') '.';
+  color: #718096;
+}
+
+/* Current section highlight */
+.policyContainer .tocList a.active {
+  background-color: #ebf8ff;
+  color: #2b6cb0;
+  font-weight: 500;
+  border-left: 3px solid #4299e1;
+  padding-left: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .policyContainer .toc {
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .policyContainer .tocList a {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+}

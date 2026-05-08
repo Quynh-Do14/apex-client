@@ -1,0 +1,328 @@
+.main-layout-client {
+  position: relative;
+}
+
+/* Social Media Sidebar - Right Side */
+.main-layout-client .social.media {
+  position: fixed;
+  right: 2%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+/* Hotline Sidebar - Left Side */
+.main-layout-client .social.tel {
+  position: fixed;
+  left: 2%;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+/* Hotline Button Styling */
+.main-layout-client .social.tel .social-item {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(145deg, #00b4db, #0083b0);
+  border-radius: 60px;
+  padding: 2px 12px 2px 2px;
+  text-decoration: none;
+  animation: glow-pulse 2.5s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 180, 219, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(145deg, #00b4db, #0083b0);
+}
+
+.main-layout-client .social.tel .social-item:hover {
+  transform: translateX(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 180, 219, 0.6);
+  background: linear-gradient(145deg, #00c6e6, #0095c4);
+}
+
+.main-layout-client .social.tel .social-item img {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.main-layout-client .social.tel .social-item span {
+  color: white;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Social Media Icons Styling */
+.main-layout-client .social.media .social-item {
+  position: relative;
+  display: inline-block;
+  animation: float-soft 3s ease-in-out infinite;
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.main-layout-client .social img {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  display: block;
+}
+
+.main-layout-client .social.media img:hover {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.25));
+}
+
+/* Individual social media colors on hover */
+.main-layout-client .social.media .social-item[data-tooltip="Facebook"]:hover {
+  background: #1877f2;
+}
+.main-layout-client .social.media .social-item[data-tooltip="Zalo"]:hover {
+  background: #0068ff;
+}
+.main-layout-client .social.media .social-item[data-tooltip="Messenger"]:hover {
+  background: #0084ff;
+}
+
+/* Modern Tooltip for Social Media */
+.main-layout-client .media .social-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 68px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.main-layout-client .media .social-item::before {
+  content: '';
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid rgba(0, 0, 0, 0.85);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-layout-client .media .social-item:hover::after,
+.main-layout-client .media .social-item:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-layout-client .media .social-item:hover::after {
+  transform: translateY(-50%) translateX(-4px);
+}
+
+/* Enhanced Animations */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 8px 20px rgba(0, 180, 219, 0.4), 0 0 0 0 rgba(0, 180, 219, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(0, 180, 219, 0.6), 0 0 0 10px rgba(0, 180, 219, 0);
+  }
+}
+
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* New subtle entrance animation for icons */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.main-layout-client .social.media .social-item {
+  animation: slideInRight 0.5s ease-out, float-soft 3s ease-in-out 0.5s infinite;
+}
+
+.main-layout-client .social.tel .social-item {
+  animation: slideInLeft 0.5s ease-out, glow-pulse 2.5s ease-in-out 0.5s infinite;
+}
+
+/* Stagger animation delays for social icons */
+.main-layout-client .social.media .social-item:nth-child(1) { animation-delay: 0s, 0s; }
+.main-layout-client .social.media .social-item:nth-child(2) { animation-delay: 0.1s, 0.3s; }
+.main-layout-client .social.media .social-item:nth-child(3) { animation-delay: 0.2s, 0.6s; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .main-layout-client .social img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .main-layout-client .social.tel .social-item img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .main-layout-client .social.tel .social-item span {
+    font-size: 15px;
+  }
+
+  .main-layout-client .media .social-item::after {
+    right: 62px;
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout-client .social.media {
+    right: 3%;
+    bottom: 3%;
+    gap: 10px;
+  }
+  
+  .main-layout-client .social.tel {
+    left: 3%;
+    bottom: 3%;
+  }
+
+  .main-layout-client .social img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .main-layout-client .social.tel .social-item {
+    padding: 5px 12px 5px 5px;
+  }
+
+  .main-layout-client .social.tel .social-item img {
+    width: 36px;
+    height: 36px;
+    margin-right: 8px;
+  }
+
+  .main-layout-client .social.tel .social-item span {
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .main-layout-client .social.media .social-item {
+    animation: float-soft 4s ease-in-out infinite;
+  }
+
+  .main-layout-client .media .social-item::after,
+  .main-layout-client .media .social-item::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-layout-client .social.tel .social-item {
+    padding: 4px 10px 4px 4px;
+  }
+
+  .main-layout-client .social.tel .social-item img {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+  }
+
+  .main-layout-client .social.tel .social-item span {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  .main-layout-client .social img {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .main-layout-client .social.media {
+    gap: 8px;
+  }
+  
+  .main-layout-client .social.tel,
+  .main-layout-client .social.media {
+    bottom: 2%;
+  }
+}
+
+/* Accessibility - Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .main-layout-client .social.tel .social-item,
+  .main-layout-client .social.media .social-item {
+    animation: none !important;
+  }
+  
+  .main-layout-client .social.tel .social-item:hover {
+    transform: translateX(-4px) scale(1.01);
+  }
+  
+  .main-layout-client .social.media img:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* Touch device optimization */
+@media (hover: none) and (pointer: coarse) {
+  .main-layout-client .social.tel .social-item:hover {
+    transform: none;
+  }
+  
+  .main-layout-client .social.media img:hover {
+    transform: none;
+  }
+}
