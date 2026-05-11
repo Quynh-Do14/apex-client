@@ -15,12 +15,12 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'rimo.vn',
+        hostname: 'apexauto.vn',
         pathname: '/api/uploads/**'
       },
       {
         protocol: 'http',
-        hostname: 'rimo.vn',
+        hostname: 'apexauto.vn',
         pathname: '/api/uploads/**'
       },
       {
@@ -31,13 +31,13 @@ const nextConfig = {
       },
       {
         protocol: 'http',
-        hostname: '103.130.213.26',
-        port: '8000',
+        hostname: '103.130.215.248',
+        port: '43216',
         pathname: '/api/uploads/**'
       },
       {
         protocol: 'https',
-        hostname: 'api.rimo.vn',
+        hostname: 'api.apexauto.vn',
         pathname: '/api/uploads/**'
       },
       {

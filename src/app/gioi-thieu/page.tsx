@@ -71,7 +71,7 @@ const aboutPageSchema = {
     "description": "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ, Công ty Quang Minh nhập khẩu và phân phối chính hãng tại Việt Nam.",
     "mainEntity": {
         "@type": "Organization",
-        "name": "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh",
+        "name": "Công ty TNHH Apex Auto",
         "description": "Nhà nhập khẩu và phân phối chính hãng phim cách nhiệt Rimo tại Việt Nam",
         "foundingDate": "2017-04-12",
         "foundingLocation": "Hà Nội, Việt Nam",
@@ -106,7 +106,7 @@ const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${publicURL}#organization`,
-    "name": "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh",
+    "name": "Công ty TNHH Apex Auto",
     "alternateName": "Rimo Việt Nam",
     "url": publicURL,
     "logo": configImageURL('/uploads/RIMO-logo.png'),
@@ -132,7 +132,7 @@ const websiteSchema = {
     "description": "Phim cách nhiệt và PPF Rimo chính hãng - Công ty Quang Minh",
     "publisher": {
         "@type": "Organization",
-        "name": "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh",
+        "name": "Công ty TNHH Apex Auto",
         "logo": configImageURL('/uploads/RIMO-logo.png')
     }
 };
@@ -141,7 +141,7 @@ export const metadata: Metadata = {
     title: "Giới thiệu - Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
     description: "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ, Công ty Quang Minh nhập khẩu và phân phối chính hãng tại Việt Nam.",
     keywords: keywords.join(", "),
-    authors: [{ name: "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh" }],
+    authors: [{ name: "Công ty TNHH Apex Auto" }],
 
     openGraph: {
         type: "website",
@@ -262,7 +262,7 @@ const IntroducePage = async () => {
                     <BreadcrumbCommon
                         breadcrumb={"Giới thiệu"}
                         redirect={ROUTE_PATH.INTRODUCE}
-                        title={'CÔNG TY TNHH THƯƠNG MẠI XNK NỘI THẤT Ô TÔ QUANG MINH'}
+                        title={'Công ty TNHH Apex Auto'}
                         blackColor={true}
                     />
                     <TocClient tocItems={tocItemsLength} />

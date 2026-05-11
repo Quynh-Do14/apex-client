@@ -106,7 +106,7 @@ const ProductSlugPage = async ({ params }: Props) => {
             "availability": "https://schema.org/InStock",
             "seller": {
                 "@type": "Organization",
-                "name": "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh"
+                "name": "Công ty TNHH Apex Auto"
             }
         },
     };

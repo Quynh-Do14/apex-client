@@ -54,7 +54,7 @@ let defaultMetadata = {
 };
 
 const siteURL = process.env.NEXT_PUBLIC_PUBLIC_URL || '';
-const companyName = "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh";
+const companyName = "Công ty TNHH Apex Auto";
 const organization = "GPKD số 0107801299 do Sở KH và ĐT TP Hà Nội cấp ngày 12/04/2017. Chuyên nhập khẩu và phân phối phim cách nhiệt Rimo chính hãng.";
 const product = "Phim cách nhiệt ô tô Rimo cao cấp với công nghệ Nano Ceramic, chống tia UV 99%, cách nhiệt hiệu quả, bảo vệ sơn xe toàn diện";
 const webSchemaDescription = "Rimo là thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ";
@@ -149,7 +149,7 @@ const LocalBusinessSchema = () => {
     "@context": "https://schema.org",
     "@type": "AutomotiveBusiness",
     "@id": `${siteURL}/#localbusiness`,
-    "name": "Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh",
+    "name": "Công ty TNHH Apex Auto",
     "image": configImageURL('/uploads/RIMO-logo.png'),
     "description": "Chuyên cung cấp và lắp đặt phim cách nhiệt ô tô, phim PPF bảo vệ sơn Rimo chính hãng",
     "url": siteURL,

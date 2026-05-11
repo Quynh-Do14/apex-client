@@ -237,11 +237,11 @@ const HeaderSection = () => {
             label: "TIN TỨC",
             href: ROUTE_PATH.BLOG,
         },
-        // {
-        //     id: "contact",
-        //     label: "LIÊN HỆ",
-        //     href: ROUTE_PATH.CONTACT,
-        // },
+        {
+            id: "contact",
+            label: "LIÊN HỆ",
+            href: ROUTE_PATH.CONTACT,
+        },
     ];
 
     return (
@@ -388,28 +388,31 @@ const HeaderSection = () => {
                                         </Link>
                                     </div>
 
-                                    {item.dropdown && activeDropdown === item.id && (
-                                        <div className="mobile-dropdown">
-                                            {item.dropdown.map((subItem, index) => (
-                                                <Link
-                                                    key={index}
-                                                    href={subItem.href}
-                                                    className={`mobile-dropdown-item ${pathname === subItem.href ? 'active' : ''}`}
-                                                    onClick={() => {
-                                                        setActiveDropdown(null);
-                                                        setIsMobileMenuOpen(false);
-                                                    }}
-                                                >
-                                                    <span className="dropdown-icon">
-                                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                            <path d="M5 12h14M12 5l7 7-7 7" />
-                                                        </svg>
-                                                    </span>
-                                                    {subItem.label}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    )}
+                                    {item.dropdown
+                                        // && activeDropdown === item.id Active submenu
+                                        &&
+                                        (
+                                            <div className="mobile-dropdown">
+                                                {item.dropdown.map((subItem, index) => (
+                                                    <Link
+                                                        key={index}
+                                                        href={subItem.href}
+                                                        className={`mobile-dropdown-item ${pathname === subItem.href ? 'active' : ''}`}
+                                                        onClick={() => {
+                                                            setActiveDropdown(null);
+                                                            setIsMobileMenuOpen(false);
+                                                        }}
+                                                    >
+                                                        <span className="dropdown-icon">
+                                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                                                <path d="M5 12h14M12 5l7 7-7 7" />
+                                                            </svg>
+                                                        </span>
+                                                        {subItem.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
                                 </li>
                             ))}
                         </ul>

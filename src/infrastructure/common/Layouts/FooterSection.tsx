@@ -50,11 +50,11 @@ const FooterSection = () => {
             label: "Tin tức",
             href: ROUTE_PATH.BLOG,
         },
-        // {
-        //     id: "contact",
-        //     label: "Liên hệ",
-        //     href: ROUTE_PATH.CONTACT,
-        // },
+        {
+            id: "contact",
+            label: "Liên hệ",
+            href: ROUTE_PATH.CONTACT,
+        },
     ];
 
     const policy = [
@@ -95,7 +95,7 @@ const FooterSection = () => {
             <div className={styles.footerContainer}>
                 <div className={styles.footerSection}>
                     <div className={styles.sectionTitle}>
-                        Công ty TNHH Thương Mại XNK Nội Thất Ô Tô Quang Minh
+                        Công ty TNHH Apex Auto
                     </div>
                     {/* <div className={styles.contactInfo}>
                         <div className={styles.companyInfo}>
