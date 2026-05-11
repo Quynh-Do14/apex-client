@@ -95,7 +95,7 @@
 
 .itemMedia {
   position: relative;
-  height: 280px;
+  /* height: 280px; */
   overflow: hidden;
   background: #f0f0f0;
 }
@@ -106,6 +106,7 @@
 }
 
 .thumbnailWrapper {
+  aspect-ratio: 1/1;
   position: relative;
   width: 100%;
   height: 100%;

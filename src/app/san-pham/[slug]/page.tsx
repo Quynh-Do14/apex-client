@@ -191,20 +191,32 @@ const ProductSlugPage = async ({ params }: Props) => {
                     <div className={`${styles.content} padding-section`}>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
                             <div className="w-full">
-                                <GalleryComponent slides={dataDetail.images} />
+                                <GalleryComponent
+                                    productName={dataDetail.name}
+                                    slides={dataDetail.images}
+                                    avatarImage={dataDetail.image}
+                                />
                             </div>
                             <div className={styles.productInfo}>
                                 <h1>{dataDetail.name}</h1>
                                 <div className="space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-2xl font-bold text-red-600">
-                                            {formatCurrency(dataDetail.price)}đ
-                                        </span>
                                         {dataDetail.price_sale ? (
-                                            <span className="text-lg text-gray-500 line-through">
-                                                {formatCurrency(dataDetail.price_sale)}đ
+                                            // Nếu có price_sale (giá khuyến mãi)
+                                            <>
+                                                <span className="text-2xl font-bold text-red-600">
+                                                    {formatCurrency(dataDetail.price_sale)}đ
+                                                </span>
+                                                <span className="text-lg text-gray-500 line-through">
+                                                    {formatCurrency(dataDetail.price)}đ
+                                                </span>
+                                            </>
+                                        ) : (
+                                            // Không có price_sale (chỉ có giá gốc)
+                                            <span className="text-2xl font-bold text-red-600">
+                                                {formatCurrency(dataDetail.price)}đ
                                             </span>
-                                        ) : null}
+                                        )}
                                     </div>
                                 </div>
                                 <div className="flex">

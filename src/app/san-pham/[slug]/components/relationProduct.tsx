@@ -32,7 +32,7 @@ const RelationProductComponent = (props: Props) => {
                             <div className={styles.itemContent}>
                                 <div className={styles.contentWrapper}>
                                     <h3 className={styles.itemTitle}>{item.name}</h3>
-                                    <div className={styles.itemPrice}>
+                                    {/* <div className={styles.itemPrice}>
                                         {item.price_sale ? (
                                             <>
                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
@@ -43,7 +43,7 @@ const RelationProductComponent = (props: Props) => {
                                         ) : (
                                             <span className={styles.normalPrice}>{formatCurrencyVND(item.price)}</span>
                                         )}
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </Link>

@@ -32,11 +32,13 @@ const SlideItem = memo(({ slide, isActive, onClick }: { slide: string, isActive:
 SlideItem.displayName = 'SlideItem';
 
 type Props = {
+    productName: string
+    avatarImage: string
     slides: string[];
 };
 
 const GalleryComponent = (props: Props) => {
-    const { slides } = props;
+    const { productName, avatarImage, slides } = props;
     const [currentSlide, setCurrentSlide] = useState<number>(0);
     const [mainImage, setMainImage] = useState<string>(slides[0] || '');
     const mainImageRef = useRef<HTMLDivElement>(null);
@@ -157,16 +159,32 @@ const GalleryComponent = (props: Props) => {
                     ref={mainImageRef}
                     tabIndex={-1}
                 >
-                    <div className={styles.imageContainer}>
-                        <Image
-                            src={configImageURL(mainImage)}
-                            alt="Main product image"
-                            fill
-                            className={styles.mainImage}
-                            priority
-                            quality={90}
-                        />
-                    </div>
+                    {
+                        slides.length == 0
+                            ?
+                            <div className={styles.imageContainer}>
+                                <Image
+                                    src={configImageURL(avatarImage)}
+                                    alt={productName}
+                                    fill
+                                    className={styles.mainImage}
+                                    priority
+                                    quality={90}
+                                />
+                            </div>
+                            :
+                            <div className={styles.imageContainer}>
+                                <Image
+                                    src={configImageURL(mainImage)}
+                                    alt={productName}
+                                    fill
+                                    className={styles.mainImage}
+                                    priority
+                                    quality={90}
+                                />
+                            </div>
+                    }
+
 
                     {/* Navigation Buttons */}
                     {
