@@ -20,46 +20,36 @@ const workSans = Work_Sans({
 
 // Danh sách keywords cho SEO
 const keywords = [
-  "RIMO",
-  "phim cách nhiệt Rimo",
-  "phim ppf Rimo",
-  "phim bảo vệ sơn Rimo",
-  "dán phim cách nhiệt Rimo",
-  "dán ppf Rimo",
-  "phim ceramic Rimo",
-  "phim cách nhiệt nano ceramic Rimo",
-  "phim cách nhiệt cao cấp Rimo",
-  "phim cách nhiệt chính hãng Rimo",
-  "cách nhiệt ô tô Hà Nội",
-  "cửa hàng dán phim cách nhiệt",
-  "đại lý phim cách nhiệt",
-  "phim cách nhiệt giá tốt",
-  "phim cách nhiệt ô tô giá rẻ",
-  "bảo vệ sơn xe hơi",
-  "phim bảo vệ sơn xe",
-  "PPF bảo vệ sơn",
-  "Paint Protection Film",
-  "phim cách nhiệt chống tia UV",
-  "phim cách nhiệt cách âm",
-  "dịch vụ dán phim ô tô",
-  "lắp đặt phim cách nhiệt",
-  "phim cách nhiệt ô tô toàn quốc",
-  "địa chỉ dán phim cách nhiệt uy tín"
+  "Apexauto",
+  "Apex auto",
+  "Apex auto Thành phố Hồ Chí Minh",
+  "Apexauto Thành phố Hồ Chí Minh",
+  "Zestech",
+  "3M",
+  "Inmax",
+  "Màn hình android",
+  "Android box",
+  "Lắp đặt màn hình Zestech",
+  "Lắp màn android tại Thành phố Hồ Chí Minh",
+  "Lắp màn Zestech tại Thành phố Hồ Chí Minh",
+  "Độ xe điện",
+  "Lắp ốp pin xe điện ở đâu",
+  "Lắp ốp pin xe Vinfast"
 ];
 
 // Default metadata (fallback)
 let defaultMetadata = {
-  title: "Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
-  description: "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại.",
+  title: "TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
+  description: "RIMO, phim cách nhiệt Rimo, phim ppf Rimo, phim bảo vệ sơn Rimo, dán phim cách nhiệt Rimo, dán ppf Rimo, phim ceramic Rimo, phim cách nhiệt nano ceramic Rimo, phim cách nhiệt cao cấp Rimo, phim cách nhiệt chính hãng Rimo, cách nhiệt ô tô Hà Nội, cửa hàng dán phim cách nhiệt, đại lý phim cách nhiệt, phim cách nhiệt giá tốt, phim cách nhiệt ô tô giá rẻ, bảo vệ sơn xe hơi, phim bảo vệ sơn xe, PPF bảo vệ sơn, Paint Protection Film, phim cách nhiệt chống tia UV, phim cách nhiệt cách âm, dịch vụ dán phim ô tô, lắp đặt phim cách nhiệt, phim cách nhiệt ô tô toàn quốc, địa chỉ dán phim cách nhiệt uy tín",
 };
 
 const siteURL = process.env.NEXT_PUBLIC_PUBLIC_URL || '';
 const companyName = "Công ty TNHH Apex Auto";
-const organization = "GPKD số 0107801299 do Sở KH và ĐT TP Hà Nội cấp ngày 12/04/2017. Chuyên nhập khẩu và phân phối phim cách nhiệt Rimo chính hãng.";
-const product = "Phim cách nhiệt ô tô Rimo cao cấp với công nghệ Nano Ceramic, chống tia UV 99%, cách nhiệt hiệu quả, bảo vệ sơn xe toàn diện";
-const webSchemaDescription = "Rimo là thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ";
+const organization = "GPKD số 0107801299 do Sở KH và ĐT TP Thành phố Hồ Chí Minh cấp. Chuyên nhập khẩu và phân phối phụ kiện ô tô, màn hình Android, phim cách nhiệt Rimo chính hãng.";
+const product = "Phụ kiện ô tô cao cấp: Màn hình Android, Android Box, phim cách nhiệt Rimo, 3M, Inmax, Zestech. Sản phẩm chính hãng, bảo hành dài hạn, lắp đặt chuyên nghiệp tại Thành phố Hồ Chí Minh";
+const webSchemaDescription = "Apex Auto - Trung tâm phụ kiện ô tô hàng đầu tại Thành phố Hồ Chí Minh. Cung cấp màn hình Android, phim cách nhiệt, phụ kiện xe hơi chính hãng, giá tốt, dịch vụ chuyên nghiệp.";
 
-const GA_TRACKING_ID = 'G-D5W7JLDXBC';
+const GA_TRACKING_ID = 'GTM-KRSBH77K';
 
 // Tạo async function để fetch metadata
 async function getMetadata() {
@@ -114,17 +104,17 @@ export async function generateMetadata(): Promise<Metadata> {
       description: metadata.description,
       images: [
         {
-          url: configImageURL('/uploads/RIMO-logo.png'),
-          alt: "Phim cách nhiệt & Phim PPF Rimo",
+          url: configImageURL('/uploads/apex-auto-logo.png'),
+          alt: "Apex Auto Thành phố Hồ Chí Minh - Phụ kiện ô tô cao cấp",
         },
       ],
-      siteName: "Phim cách nhiệt & Phim PPF Rimo",
+      siteName: "Apex Auto Thành phố Hồ Chí Minh",
     },
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
-      images: [configImageURL('/uploads/RIMO-logo.png')],
+      images: [configImageURL('/uploads/apex-auto-logo.png')],
     },
     robots: {
       index: true,
@@ -150,36 +140,45 @@ const LocalBusinessSchema = () => {
     "@type": "AutomotiveBusiness",
     "@id": `${siteURL}/#localbusiness`,
     "name": "Công ty TNHH Apex Auto",
-    "image": configImageURL('/uploads/RIMO-logo.png'),
-    "description": "Chuyên cung cấp và lắp đặt phim cách nhiệt ô tô, phim PPF bảo vệ sơn Rimo chính hãng",
+    "image": configImageURL('/uploads/logo.png'),
+    "description": "Trung tâm phụ kiện và đồ chơi xe hơi cao cấp tại Thành phố Hồ Chí Minh. Chuyên cung cấp và lắp đặt màn hình Android, phim cách nhiệt Rimo, phụ kiện ô tô chính hãng",
     "url": siteURL,
-    "hasMap": `https://maps.app.goo.gl/GNH8zFY4UT5svvrq8`,
-    "telephone": "+84-02462926666",
+    "hasMap": `https://maps.app.goo.gl/xxxxxxxxxx`, // Cập nhật link Google Maps thực tế
+    "telephone": "+84866209168", // Cập nhật số điện thoại thực tế
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Số 12 Ngõ 44 Tư Đình – Tổ 5 – Phường Long Biên – Thành phố Hà Nội",
-      "addressLocality": "Hà Nội",
-      "addressRegion": "Hà Nội",
-      "postalCode": "100000",
+      "streetAddress": "Số 123, Đường XXX, Phường YYY", // Cập nhật địa chỉ thực tế
+      "addressLocality": "Thủ Dầu Một",
+      "addressRegion": "Thành phố Hồ Chí Minh",
+      "postalCode": "820000",
       "addressCountry": "VN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "20.987787",
-      "longitude": "105.861443"
+      "latitude": "10.7756", // Cập nhật tọa độ thực tế của Thành phố Hồ Chí Minh
+      "longitude": "106.7019" // Cập nhật tọa độ thực tế của Thành phố Hồ Chí Minh
     },
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "08:00",
         "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday"],
+        "opens": "09:00",
+        "closes": "17:00"
       }
     ],
     "priceRange": "$$",
-    "serviceType": "Phim cách nhiệt ô tô, PPF bảo vệ sơn, Dán phim cách nhiệt",
-    "areaServed": { "@type": "City", "name": "Hà Nội" },
-    "sameAs": ["https://www.facebook.com/rimo.vietnam"],
+    "serviceType": "Màn hình Android, Phim cách nhiệt, Phụ kiện ô tô, Lắp đặt màn hình, Độ xe điện",
+    "areaServed": {
+      "@type": "City",
+      "name": "Thành phố Hồ Chí Minh"
+    },
+    "sameAs": ["https://www.facebook.com/vn.apexauto"], // Cập nhật Facebook thực tế
   };
 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
@@ -192,14 +191,14 @@ const OrganizationSchema = () => {
     "@id": `${siteURL}/#organization`,
     "name": companyName,
     "url": siteURL,
-    "logo": configImageURL('/uploads/RIMO-logo.png'),
+    "logo": configImageURL('/uploads/apex-auto-logo.png'),
     "description": organization,
-    "sameAs": ["https://www.facebook.com/rimo.vietnam"],
+    "sameAs": ["https://www.facebook.com/vn.apexauto"], // Cập nhật Facebook thực tế
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "02462926666",
+      "telephone": "+84866209168", // Cập nhật số điện thoại thực tế
       "contactType": "customer service",
-      "availableLanguage": ["Vietnamese"],
+      "availableLanguage": ["Vietnamese", "English"],
       "areaServed": "VN"
     }
   };
@@ -230,17 +229,20 @@ const ProductSchema = () => {
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${siteURL}/#product`,
-    "name": "Phim cách nhiệt Rimo, Phim bảo về sơn PPF Rimo",
+    "name": "Phim cách nhiệt,PPF bảo vệ sơn,Màn hình android,Android Box,Đèn tăng sáng,Khám phá thêm,Độ xe điện",
     "description": product,
-    "image": configImageURL('/uploads/RIMO-logo.png'),
-    "brand": { "@type": "Brand", "name": "Rimo" },
+    "image": configImageURL('/uploads/apex-auto-logo.png'),
+    "brand": {
+      "@type": "Brand",
+      "name": "Apex Auto"
+    },
     "category": "Phụ kiện ô tô",
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "VND",
-      "lowPrice": "1500000",
-      "highPrice": "10000000",
-      "offerCount": "5"
+      "lowPrice": "1000000",
+      "highPrice": "20000000",
+      "offerCount": "10"
     }
   };
 
@@ -283,13 +285,15 @@ export default function RootLayout({
         <meta name="googlebot-news" content="index, follow" />
         <meta name="google-extended" content="notranslate" />
 
-        {/* Geo tags */}
-        <meta name="geo.region" content="VN-HN" />
-        <meta name="geo.placename" content="Hà Nội" />
-        <meta name="geo.position" content="20.987787;105.861443" />
-        <meta name="ICBM" content="20.987787, 105.861443" />
-        {/* <meta name="google-site-verification" content="gd5S1-HkR2XIm6GugYGU241BTwelQ_4Xdkp3Rw8m8Ik" /> */}
-        <meta name="google-site-verification" content="dQdpGMpP2bNN9axquorwXBuKE2UWz2yXqqFvXyDKDEU" />
+        {/* Geo tags - Thành phố Hồ Chí Minh */}
+        <meta name="geo.region" content="VN-57" /> {/* Mã vùng Thành phố Hồ Chí Minh */}
+        <meta name="geo.placename" content="Thành phố Hồ Chí Minh" />
+        <meta name="geo.position" content="10.7756,106.7019" /> {/* Cập nhật tọa độ Thành phố Hồ Chí Minh */}
+        <meta name="ICBM" content="10.7756,106.7019" />
+
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="69SntjtI5IqppTdIzDLIEf5To_9cjCL_E_Xv9ccFyWA" />
+
         {/* Schema.org */}
         <LocalBusinessSchema />
         <OrganizationSchema />

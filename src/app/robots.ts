@@ -76,6 +76,6 @@ export default function robots(): MetadataRoute.Robots {
                 ],
             },
         ],
-        sitemap: 'https://rimo.vn/sitemap.xml',
+        sitemap: 'https://apexauto.vn/sitemap.xml',
     }
 }

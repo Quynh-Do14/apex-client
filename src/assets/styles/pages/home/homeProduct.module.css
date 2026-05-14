@@ -97,7 +97,11 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
   border-radius: 20px;
   z-index: -1;
   transition: opacity 0.5s ease;
@@ -273,7 +277,7 @@
   pointer-events: none;
 }
 
-.galleryItem[data-sale="true"]::after {
+.galleryItem[data-sale='true']::after {
   content: 'SALE';
   display: flex;
   align-items: center;
@@ -310,37 +314,31 @@
     gap: 30px;
     border-radius: 20px;
   }
-  
+
   .productSection .galleryGrid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
     padding: 5px;
   }
-  
-  .productSection .galleryGrid2Col,
-  .productSection .galleryGrid3Col {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  
+
   .productSection .itemTitle {
     font-size: 0.95rem;
     margin-bottom: 8px;
   }
-  
+
   .productSection .salePrice,
   .productSection .normalPrice {
     font-size: 1.1rem;
   }
-  
+
   .productSection .originalPrice {
     font-size: 0.85rem;
   }
-  
+
   .mediaOverlay {
     padding: 20px 12px 12px;
   }
-  
+
   .galleryContainer .galleryHeader .mainTitle {
     font-size: 1.8rem;
   }
@@ -356,9 +354,7 @@
     align-self: flex-start;
   }
 
-  .productSection .galleryGrid,
-  .productSection .galleryGrid2Col,
-  .productSection .galleryGrid3Col {
+  .productSection .galleryGrid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
   }
@@ -379,9 +375,7 @@
 }
 
 @media (max-width: 768px) {
-  .productSection .galleryGrid,
-  .productSection .galleryGrid2Col,
-  .productSection .galleryGrid3Col {
+  .productSection .galleryGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
@@ -408,14 +402,12 @@
 }
 
 @media (max-width: 480px) {
+  .productSection .galleryGrid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+  }
   .productSection {
     padding: 20px 12px;
-  }
-  
-  .productSection .galleryGrid2Col,
-  .productSection .galleryGrid3Col {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
 
   .productSection .itemTitle {
@@ -457,11 +449,11 @@
     gap: 5px;
     margin: 3px 0;
   }
-  
+
   .mediaOverlay {
     padding: 15px 10px 10px;
   }
-  
+
   .galleryContainer .galleryHeader .mainTitle {
     font-size: 1.5rem;
   }

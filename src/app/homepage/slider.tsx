@@ -12,7 +12,7 @@ import { BannerInterface } from "@/infrastructure/interface/banner/banner.interf
 // Dynamically import slick-carousel to avoid SSR issues
 const Slider = dynamic(() => import("react-slick"), {
     ssr: false,
-    loading: () => <div className={styles.sliderLoading}>Loading...</div>
+    loading: () => <div className={styles.sliderLoading}></div>
 });
 
 import { Settings } from "react-slick";
