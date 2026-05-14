@@ -49,7 +49,7 @@ const organization = "GPKD số 0107801299 do Sở KH và ĐT TP Thành phố H�
 const product = "Phụ kiện ô tô cao cấp: Màn hình Android, Android Box, phim cách nhiệt Rimo, 3M, Inmax, Zestech. Sản phẩm chính hãng, bảo hành dài hạn, lắp đặt chuyên nghiệp tại Thành phố Hồ Chí Minh";
 const webSchemaDescription = "Apex Auto - Trung tâm phụ kiện ô tô hàng đầu tại Thành phố Hồ Chí Minh. Cung cấp màn hình Android, phim cách nhiệt, phụ kiện xe hơi chính hãng, giá tốt, dịch vụ chuyên nghiệp.";
 
-const GA_TRACKING_ID = 'G-SKGSGMG46V';
+const GA_TRACKING_ID = 'G-6N4Z6M8XY3';
 
 // Tạo async function để fetch metadata
 async function getMetadata() {
