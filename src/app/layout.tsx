@@ -40,7 +40,7 @@ const keywords = [
 // Default metadata (fallback)
 let defaultMetadata = {
   title: "TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
-  description: "RIMO, phim cách nhiệt Rimo, phim ppf Rimo, phim bảo vệ sơn Rimo, dán phim cách nhiệt Rimo, dán ppf Rimo, phim ceramic Rimo, phim cách nhiệt nano ceramic Rimo, phim cách nhiệt cao cấp Rimo, phim cách nhiệt chính hãng Rimo, cách nhiệt ô tô Hà Nội, cửa hàng dán phim cách nhiệt, đại lý phim cách nhiệt, phim cách nhiệt giá tốt, phim cách nhiệt ô tô giá rẻ, bảo vệ sơn xe hơi, phim bảo vệ sơn xe, PPF bảo vệ sơn, Paint Protection Film, phim cách nhiệt chống tia UV, phim cách nhiệt cách âm, dịch vụ dán phim ô tô, lắp đặt phim cách nhiệt, phim cách nhiệt ô tô toàn quốc, địa chỉ dán phim cách nhiệt uy tín",
+  description: "Trung tâm phụ kiện ô tô hàng đầu tại Thành phố Hồ Chí Minh. Cung cấp màn hình Android, phim cách nhiệt, phụ kiện xe hơi chính hãng, giá tốt, dịch vụ chuyên nghiệp.",
 };
 
 const siteURL = process.env.NEXT_PUBLIC_PUBLIC_URL || '';
@@ -143,11 +143,11 @@ const LocalBusinessSchema = () => {
     "image": configImageURL('/uploads/logo.png'),
     "description": "Trung tâm phụ kiện và đồ chơi xe hơi cao cấp tại Thành phố Hồ Chí Minh. Chuyên cung cấp và lắp đặt màn hình Android, phim cách nhiệt Rimo, phụ kiện ô tô chính hãng",
     "url": siteURL,
-    "hasMap": `https://maps.app.goo.gl/xxxxxxxxxx`, // Cập nhật link Google Maps thực tế
+    "hasMap": `https://maps.app.goo.gl/XkR8zGTyqPNqUTsp7`, // Cập nhật link Google Maps thực tế
     "telephone": "+84866209168", // Cập nhật số điện thoại thực tế
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Số 123, Đường XXX, Phường YYY", // Cập nhật địa chỉ thực tế
+      "streetAddress": "619 Đại lộ Bình Dương, Thủ Dầu Một, Hồ Chí Minh 75000, Vietnam", // Cập nhật địa chỉ thực tế
       "addressLocality": "Thủ Dầu Một",
       "addressRegion": "Thành phố Hồ Chí Minh",
       "postalCode": "820000",

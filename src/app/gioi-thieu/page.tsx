@@ -14,33 +14,22 @@ const publicURL = process.env.NEXT_PUBLIC_PUBLIC_URL;
 const introduceUrl = `${publicURL}${ROUTE_PATH.INTRODUCE}`;
 
 const keywords = [
-    "CÔNG TY TNHH TM XNK NỘI THẤT Ô TÔ QUANG MINH",
-    "Công ty TNHH Thương Mại Xuất nhập khẩu Nội thất ô tô Quang Minh",
-    "RIMO",
-    "phim cách nhiệt Rimo",
-    "phim ppf Rimo",
-    "phim bảo vệ sơn ô tô",
-    "dán phim cách nhiệt ô tô",
-    "dán ppf ô tô",
-    "phim ceramic ô tô",
-    "phim cách nhiệt nano ceramic",
-    "phim cách nhiệt cao cấp",
-    "phim cách nhiệt chính hãng",
-    "cách nhiệt ô tô Hà Nội",
-    "cửa hàng dán phim cách nhiệt",
-    "đại lý phim cách nhiệt",
-    "phim cách nhiệt giá tốt",
-    "phim cách nhiệt ô tô giá rẻ",
-    "bảo vệ sơn xe hơi",
-    "phim bảo vệ sơn xe",
-    "PPF bảo vệ sơn",
-    "Paint Protection Film",
-    "phim cách nhiệt chống tia UV",
-    "phim cách nhiệt cách âm",
-    "dịch vụ dán phim ô tô",
-    "lắp đặt phim cách nhiệt",
-    "phim cách nhiệt ô tô toàn quốc",
-    "địa chỉ dán phim cách nhiệt uy tín"
+    "Apexauto",
+    "Apex auto",
+    "Apex auto Thành phố Hồ Chí Minh",
+    "Apexauto Thành phố Hồ Chí Minh",
+    "Công ty TNHH Apex Auto",
+    "Zestech",
+    "3M",
+    "Inmax",
+    "Màn hình android",
+    "Android box",
+    "Lắp đặt màn hình Zestech",
+    "Lắp màn android tại Thành phố Hồ Chí Minh",
+    "Lắp màn Zestech tại Thành phố Hồ Chí Minh",
+    "Độ xe điện",
+    "Lắp ốp pin xe điện ở đâu",
+    "Lắp ốp pin xe Vinfast"
 ];
 
 const breadcrumbSchema = {
@@ -67,18 +56,19 @@ const aboutPageSchema = {
     "@type": "AboutPage",
     "@id": introduceUrl,
     "url": introduceUrl,
-    "name": "Giới thiệu - Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
-    "description": "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ, Công ty Quang Minh nhập khẩu và phân phối chính hãng tại Việt Nam.",
+    "name": "Giới thiệu - TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
+    "description": "ApexAuto - Trung tâm phụ kiện ô tô hàng đầu tại Thành phố Hồ Chí Minh. Cung cấp màn hình Android, phim cách nhiệt, phụ kiện xe hơi chính hãng, giá tốt, dịch vụ chuyên nghiệp.",
     "mainEntity": {
         "@type": "Organization",
         "name": "Công ty TNHH Apex Auto",
-        "description": "Nhà nhập khẩu và phân phối chính hãng phim cách nhiệt Rimo tại Việt Nam",
+        "description": "Trung tâm phụ kiện và đồ chơi xe hơi cao cấp tại Thành phố Hồ Chí Minh. Chuyên cung cấp và lắp đặt màn hình Android, phim cách nhiệt Rimo, phụ kiện ô tô chính hãng",
         "foundingDate": "2017-04-12",
         "foundingLocation": "Hà Nội, Việt Nam",
         "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Số 12 Ngõ 44 Tư Đình – Tổ 5 – Phường Long Biên",
-            "addressLocality": "Hà Nội",
+            "streetAddress": "619 Đại lộ Bình Dương, Thủ Dầu Một, Hồ Chí Minh 75000, Vietnam", // Cập nhật địa chỉ thực tế
+            "addressLocality": "Thủ Dầu Một",
+            "addressRegion": "Thành phố Hồ Chí Minh",
+            "postalCode": "820000",
             "addressCountry": "VN"
         },
         "contactPoint": {
@@ -89,8 +79,8 @@ const aboutPageSchema = {
     },
     "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": configImageURL('/uploads/RIMO-logo.png'),
-        "caption": "Phim cách nhiệt & Phim PPF Rimo"
+        "url": configImageURL('/uploads/apex-auto-logo.png'),
+        "caption": "Apex Auto Thành phố Hồ Chí Minh - Phụ kiện ô tô cao cấp"
     },
     "breadcrumb": {
         "@type": "BreadcrumbList",
@@ -107,12 +97,12 @@ const organizationSchema = {
     "@type": "Organization",
     "@id": `${publicURL}#organization`,
     "name": "Công ty TNHH Apex Auto",
-    "alternateName": "Rimo Việt Nam",
+    "alternateName": "ApexAuto Việt Nam",
     "url": publicURL,
-    "logo": configImageURL('/uploads/RIMO-logo.png'),
-    "description": "Nhà nhập khẩu và phân phối chính hãng phim cách nhiệt Rimo tại Việt Nam",
+    "logo": configImageURL('/uploads/apex-auto-logo.png'),
+    "description": "Trung tâm phụ kiện và đồ chơi xe hơi cao cấp tại Thành phố Hồ Chí Minh. Chuyên cung cấp và lắp đặt màn hình Android, phim cách nhiệt Rimo, phụ kiện ô tô chính hãng",
     "sameAs": [
-        "https://www.facebook.com/rimo.vietnam",
+        "https://www.facebook.com/ApexAuto.vietnam",
     ],
     "contactPoint": {
         "@type": "ContactPoint",
@@ -128,40 +118,40 @@ const websiteSchema = {
     "@type": "WebSite",
     "@id": `${publicURL}#website`,
     "url": publicURL,
-    "name": "Phim cách nhiệt & Phim PPF Rimo",
-    "description": "Phim cách nhiệt và PPF Rimo chính hãng - Công ty Quang Minh",
+    "name": "Apex Auto Thành phố Hồ Chí Minh - Phụ kiện ô tô cao cấp",
+    "description": "Phim cách nhiệt và PPF ApexAuto chính hãng - Công ty Quang Minh",
     "publisher": {
         "@type": "Organization",
         "name": "Công ty TNHH Apex Auto",
-        "logo": configImageURL('/uploads/RIMO-logo.png')
+        "logo": configImageURL('/uploads/apex-auto-logo.png')
     }
 };
 
 export const metadata: Metadata = {
-    title: "Giới thiệu - Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
-    description: "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại. Chứng nhận COCQ đầy đủ, Công ty Quang Minh nhập khẩu và phân phối chính hãng tại Việt Nam.",
+    title: "Giới thiệu - TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
+    description: "ApexAuto - Trung tâm phụ kiện ô tô hàng đầu tại Thành phố Hồ Chí Minh. Cung cấp màn hình Android, phim cách nhiệt, phụ kiện xe hơi chính hãng, giá tốt, dịch vụ chuyên nghiệp.",
     keywords: keywords.join(", "),
     authors: [{ name: "Công ty TNHH Apex Auto" }],
 
     openGraph: {
         type: "website",
         url: `${publicURL}${ROUTE_PATH.INTRODUCE}`,
-        title: "Giới thiệu - Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
-        description: "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại.",
+        title: "Giới thiệu - TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
+        description: "ApexAuto - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô. Công nghệ Nano Ceramic & Phún xạ kim loại.",
         images: [
             {
-                url: configImageURL('/uploads/RIMO-logo.png'),
-                alt: "Phim cách nhiệt & Phim PPF Rimo",
+                url: configImageURL('/uploads/apex-auto-logo.png'),
+                alt: "Apex Auto Thành phố Hồ Chí Minh - Phụ kiện ô tô cao cấp",
             },
         ],
-        siteName: "Phim cách nhiệt & Phim PPF Rimo",
+        siteName: "Apex Auto Thành phố Hồ Chí Minh - Phụ kiện ô tô cao cấp",
     },
 
     twitter: {
         card: "summary_large_image",
-        title: "Giới thiệu - Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô",
-        description: "Rimo - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô",
-        images: [configImageURL('/uploads/RIMO-logo.png')],
+        title: "Giới thiệu - TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO",
+        description: "ApexAuto - Thương hiệu Phim cách nhiệt và PPF cao cấp dành cho ô tô",
+        images: [configImageURL('/uploads/apex-auto-logo.png')],
     },
 
     robots: {
@@ -187,8 +177,8 @@ export const metadata: Metadata = {
             websiteSchema,        // ✅ Website schema
             breadcrumbSchema      // ✅ Breadcrumb schema
         ]),
-        'og:image:alt': 'Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô',
-        'twitter:image:alt': 'Phim PPF và Cách nhiệt Rimo cao cấp dành ô tô',
+        'og:image:alt': 'TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO',
+        'twitter:image:alt': 'TRUNG TÂM PHỤ KIỆN ĐỒ CHƠI XE HƠI CAO CẤP APEX AUTO',
         'og:locale': 'vi_VN',
         'business:contact_data:street': 'Số 12 Ngõ 44 Tư Đình – Tổ 5 – Phường Long Biên – Thành phố Hà Nội',
         'business:contact_data:locality': 'Hà Nội',

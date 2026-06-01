@@ -259,9 +259,9 @@ const BlogSlugPage = async ({ params }: Props) => {
                                     <Image src={configImageURL(blog.image)} fill alt="Description" loading="lazy" />
                                 </div>
                                 <TocBlog tocItems={tocItemsLength} />
-                                <div className="tiny-style">
+                                <div className="tiny-style mce-content-body">
                                     <article
-                                        className="prose max-w-none"
+                                        className="prose max-w-none "
                                         dangerouslySetInnerHTML={{ __html: updatedContent }}
                                     />
                                 </div>

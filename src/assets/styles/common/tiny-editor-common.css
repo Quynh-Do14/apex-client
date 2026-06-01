@@ -296,3 +296,84 @@
     box-shadow: none;
   }
 }
+
+/* Xử lý cho trường hợp nhiều ảnh liên tiếp trong paragraph */
+.tiny-style p > strong > img,
+.tiny-style p > img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: calc(33.333% - 10px);
+  width: auto;
+  margin: 5px;
+}
+
+/* Tự động tạo layout cho nhiều ảnh trong cùng 1 paragraph */
+.tiny-style p:has(> strong > img, > img) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Style cho strong chứa nhiều ảnh */
+.tiny-style p strong:has(img) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  width: 100%;
+  font-weight: normal; /* Bỏ đậm để tránh ảnh bị ảnh hưởng */
+}
+
+/* Điều chỉnh ảnh trong strong */
+.tiny-style p strong img {
+  display: block;
+  flex: 0 0 calc(33.333% - 10.667px);
+  max-width: calc(33.333% - 10.667px);
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+}
+
+/* Responsive: xuống 2 cột trên tablet */
+@media (max-width: 768px) {
+  .tiny-style p strong img {
+    flex: 0 0 calc(50% - 8px);
+    max-width: calc(50% - 8px);
+  }
+}
+
+/* Responsive: xuống 1 cột trên mobile */
+@media (max-width: 480px) {
+  .tiny-style p strong img {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.tiny-style .image-gallery-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.tiny-style .image-gallery-3 img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .tiny-style .image-gallery-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .tiny-style .image-gallery-3 {
+    grid-template-columns: 1fr;
+  }
+}
