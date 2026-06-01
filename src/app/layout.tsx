@@ -24,6 +24,7 @@ const keywords = [
   "Apex auto",
   "Apex auto Thành phố Hồ Chí Minh",
   "Apexauto Thành phố Hồ Chí Minh",
+  "Đại sứ Zestech Số 1 Bình Dương",
   "Zestech",
   "3M",
   "Inmax",

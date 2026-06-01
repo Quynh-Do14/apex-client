@@ -147,7 +147,7 @@ const ProductSlugPage = async ({ params }: Props) => {
             "@type": "WebSite",
             "@id": `${publicURL}/#website`,
             "url": publicURL,
-            "name": 'Rimo'
+            "name": 'Apexauto'
         },
         "primaryImageOfPage": {
             "@type": "ImageObject",

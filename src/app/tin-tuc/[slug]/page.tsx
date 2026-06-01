@@ -29,14 +29,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         // Kiểm tra blog tồn tại
         if (!blog?.id) {
             return {
-                title: 'Bài viết không tồn tại | Rimo',
+                title: 'Bài viết không tồn tại | APEXAUTO',
                 robots: { index: false, follow: true },
             };
         }
 
         const blogUrl = `${publicURL}${ROUTE_PATH.BLOG}/${params.slug}`;
         const imageUrl = configImageURL(blog.image);
-        const imageAlt = `${blog.title} - Phim cách nhiệt Rimo`;
+        const imageAlt = `${blog.title}`;
 
         const keywordConvert = blog && blog.keyword.map(item => item.keyword)
         const keywords: string[] = [
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 title: blog.title,
                 description: blog.short_description,
                 url: blogUrl,
-                siteName: 'Rimo',
+                siteName: 'Apexauto',
                 images: [{
                     url: imageUrl,
                     alt: imageAlt,
@@ -87,7 +87,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
                 'og:locale': 'vi_VN',
                 'article:published_time': blog.created_at,
                 'article:modified_time': blog.updated_at,
-                'article:author': 'Rimo',
+                'article:author': 'Apexauto',
                 'article:section': blog.category_name,
             }
         };
@@ -95,7 +95,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     } catch (error) {
         console.error('Error generating blog metadata:', error);
         return {
-            title: 'Rimo',
+            title: 'Apexauto',
             robots: { index: false, follow: true },
         };
     }
@@ -155,15 +155,15 @@ const BlogSlugPage = async ({ params }: Props) => {
         "dateModified": blog.updated_at || blog.created_at || new Date().toISOString(),
         "author": {  // ✅ Thêm tác giả
             "@type": "Organization",
-            "name": "Rimo Việt Nam",
+            "name": "Apexauto",
             "url": publicURL
         },
         "publisher": {  // ✅ Thêm nhà xuất bản
             "@type": "Organization",
-            "name": "Rimo Việt Nam",
+            "name": "Apexauto",
             "logo": {
                 "@type": "ImageObject",
-                "url": configImageURL('/uploads/RIMO-logo.png'),
+                "url": configImageURL('/uploads/apex-auto-logo.png'),
             }
         },
         "mainEntityOfPage": {
@@ -211,7 +211,7 @@ const BlogSlugPage = async ({ params }: Props) => {
             "@type": "WebSite",
             "@id": `${publicURL}/#website`,
             "url": publicURL,
-            "name": 'Rimo Việt Nam'
+            "name": 'Apexauto'
         },
         "primaryImageOfPage": {
             "@type": "ImageObject",

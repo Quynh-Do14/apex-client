@@ -340,7 +340,7 @@ const HeaderSection = () => {
                                 </div>
                                 :
                                 <div className="mobile-logo">
-                                    <Image src={logo} alt="RIMO" width={80} />
+                                    <Image src={logo} alt="APEXAUTO" width={80} />
                                 </div>
                         }
 

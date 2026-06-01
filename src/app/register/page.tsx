@@ -60,7 +60,7 @@ const ModernLogin = () => {
                     <div className={styles.brandContent}>
                         <div className={styles.brandLogo}>
                             <div className={styles.logoIcon}>
-                                <Image src={logo} alt="RIMO" width={200} />
+                                <Image src={logo} alt="APEXAUTO" width={200} />
                             </div>
                             <div className={styles.logoGlow}></div>
                         </div>

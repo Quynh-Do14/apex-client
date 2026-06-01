@@ -38,7 +38,7 @@ const BannerCommon = (props: Props) => {
         <div className={styles.bannerContainer}>
             <Image
                 src={configImageURL(banner)}
-                alt="Banner quảng cáo dòng sản phẩm RIMO PREMIUM"
+                alt="Banner quảng cáo dòng sản phẩm APEXAUTO"
                 className={styles.bannerImage}
                 width={1920}
                 height={600}
