@@ -22,7 +22,7 @@ const publicURL = process.env.NEXT_PUBLIC_PUBLIC_URL;
 // ✅ Hàm fetch product - tái sử dụng
 async function getProduct(slug: string): Promise<ProductInterface> {
     const response = await fetch(`${baseURL}${Endpoint.Product.GetById}/${slug}`, {
-        next: { revalidate: 3600 },
+        cache: 'no-store', // Tắt cache
     });
 
     if (!response.ok) {

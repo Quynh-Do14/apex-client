@@ -17,7 +17,7 @@ const SlideItem = memo(({ slide, isActive, onClick }: { slide: string, isActive:
             <div className={styles.slideInner}>
                 <Image
                     src={configImageURL(slide)}
-                    alt="Product thumbnail"
+                    alt="APEX AUTO"
                     fill
                     className={styles.thumbnailImage}
                     sizes="100px"

@@ -27,7 +27,8 @@ const ProductContent = (props: Props) => {
 
     const onGetListProductAsync = async () => {
         const param = {
-            limit: 4
+            // limit: 4,
+            is_featured: true
         }
         try {
             await productService.GetProduct(

@@ -1,6 +1,7 @@
 import { CategoryAgencyInterface } from "@/infrastructure/interface/category/categoryAgency.interface";
 import { CategoryBlogInterface } from "@/infrastructure/interface/category/categoryBlog.interface";
 import { CategoryProductHref, CategoryProductInterface } from "@/infrastructure/interface/category/categoryProduct.interface";
+import { SubCategoryInterface } from "@/infrastructure/interface/category/subCategory.interface";
 import { atom } from "recoil";
 
 export const CategoryBlogState = atom({
@@ -40,6 +41,16 @@ export const CategoryProductHrefState = atom({
         // isLoading: false,
         // uri: '',
         data: <Array<CategoryProductHref>>[],
+
+    }, // default value (aka initial value)
+});
+
+export const SubCategoryState = atom({
+    key: 'SUB_CATEGORY_STATE', // unique ID (with respect to other atoms/selectors)
+    default: {
+        // isLoading: false,
+        // uri: '',
+        data: <Array<SubCategoryInterface>>[],
 
     }, // default value (aka initial value)
 });

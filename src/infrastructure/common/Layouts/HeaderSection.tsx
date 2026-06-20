@@ -14,7 +14,7 @@ import brandService from "@/infrastructure/repository/brand/brand.service";
 import authService from "@/infrastructure/repository/auth/auth.service";
 import productService from "@/infrastructure/repository/product/product.service";
 import { convertSlug } from "@/infrastructure/helper/helper";
-import { CategoryAgencyState, CategoryBlogState, CategoryProductHrefState, CategoryProductState } from "@/core/common/atoms/category/categoryState";
+import { CategoryAgencyState, CategoryBlogState, CategoryProductHrefState, CategoryProductState, SubCategoryState } from "@/core/common/atoms/category/categoryState";
 import { BrandState } from "@/core/common/atoms/brand/brandState";
 import { ProfileState } from "@/core/common/atoms/profile/profileState";
 import { ProductState } from "@/core/common/atoms/product/productState";
@@ -24,6 +24,7 @@ import SearchBoxHeader from "./SearchBox";
 import { ProductInterface } from "@/infrastructure/interface/product/product.interface";
 import categoryAgencyService from "@/infrastructure/repository/category/categoryAgency.service";
 import { CategoryProductInterface } from "@/infrastructure/interface/category/categoryProduct.interface";
+import subcategoryService from "@/infrastructure/repository/category/subCategory.service";
 
 const HeaderSection = () => {
     const pathname = usePathname();
@@ -38,6 +39,7 @@ const HeaderSection = () => {
     const [, setBrandState] = useRecoilState(BrandState);
     const [, setProfileState] = useRecoilState(ProfileState);
     const [productState, setProductState] = useRecoilState(ProductState);
+    const [, setSubCategoryState] = useRecoilState(SubCategoryState);
     const token = isTokenStoraged();
 
     const getActiveMenu = () => {
@@ -137,6 +139,22 @@ const HeaderSection = () => {
         }
     }
 
+    const onGetListSubCategoryAsync = async () => {
+        try {
+            await subcategoryService.GetBlogCategory(
+                {},
+                () => { }
+            ).then((res) => {
+                setSubCategoryState({
+                    data: res.data
+                })
+            })
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }
+
     const onGetProfileAsync = async () => {
         if (token) {
             try {
@@ -181,6 +199,7 @@ const HeaderSection = () => {
     useEffect(() => {
         onGetListCategoryAsync().then(_ => { });
         onGetListBlogCategoryAsync().then(_ => { });
+        onGetListSubCategoryAsync().then(_ => { });
     }, []);
 
     useEffect(() => {

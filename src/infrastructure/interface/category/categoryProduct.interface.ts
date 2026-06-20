@@ -4,7 +4,8 @@ export interface CategoryProductInterface {
     nameSplit: string;
     description: string;
     image: string;
-    slug: string
+    slug: string;
+    sub_category: boolean
 }
 
 export interface CategoryProductParams {

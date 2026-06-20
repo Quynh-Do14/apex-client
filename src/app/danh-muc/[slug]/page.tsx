@@ -11,7 +11,7 @@ import InputSearchCommon from "@/infrastructure/common/input/input-search-common
 import SelectSearchCommon from "@/infrastructure/common/input/select-search-common";
 import ButtonCommon from "@/infrastructure/common/button/button-common";
 import { useRecoilValue } from "recoil";
-import { CategoryProductState } from "@/core/common/atoms/category/categoryState";
+import { CategoryProductState, SubCategoryState } from "@/core/common/atoms/category/categoryState";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ProductInterface, ProductParams } from "@/infrastructure/interface/product/product.interface";
 import Image from "next/image";
@@ -35,6 +35,8 @@ const ProductContent = () => {
     const [initialLoading, setInitialLoading] = useState<boolean>(true);
     const [categoryId, setCategoryId] = useState<string>("");
     const [categoryName, setCategoryName] = useState<string>("");
+    const [isSubCategory, setIsSubCategory] = useState<boolean>(false);
+    const [subCategoryId, setSubCategoryId] = useState<string>("");
 
     const params: ParamsType = useParams();
     const router = useRouter();
@@ -44,15 +46,18 @@ const ProductContent = () => {
     const search = searchParams?.get('search') || '';
     const page = searchParams?.get('page') || '1';
     const limit = searchParams?.get('limit') || '10';
+    const subCategory = searchParams?.get('subCategory') || '';
 
     const categoryProductState = useRecoilValue(CategoryProductState).data
+    const subCategoryState = useRecoilValue(SubCategoryState).data
 
-    const onGetListProductAsync = async ({ name = searchText, limit = pageSize, page = currentPage, category_id = categoryId }) => {
+    const onGetListProductAsync = async ({ name = searchText, limit = pageSize, page = currentPage, category_id = categoryId, sub_category_id = subCategoryId }) => {
         const param: ProductParams = {
             page: page,
             limit: limit,
             search: name,
-            category_id: category_id
+            category_id: category_id,
+            sub_category_id: sub_category_id
         }
         try {
             await productService.GetProduct(
@@ -70,8 +75,8 @@ const ProductContent = () => {
         }
     }
 
-    const onSearch = async (name = searchText, limit = pageSize, page = 1, category_id = categoryId) => {
-        await onGetListProductAsync({ name: name, limit: limit, page: page, category_id: category_id });
+    const onSearch = async (name = searchText, limit = pageSize, page = 1, category_id = categoryId, sub_category_id = subCategoryId) => {
+        await onGetListProductAsync({ name: name, limit: limit, page: page, category_id: category_id, sub_category_id: sub_category_id });
     };
 
     const onSearchParam = async () => {
@@ -79,6 +84,7 @@ const ProductContent = () => {
         const newParams = new URLSearchParams(searchParams?.toString() || '');
         newParams.set('search', searchText);
         newParams.set('page', '1');
+        isSubCategory ? newParams.set('subCategory', subCategoryId) : null;
 
         // Xóa category_id cũ nếu có
         newParams.delete('category_id');
@@ -101,6 +107,12 @@ const ProductContent = () => {
         setCategoryId(value);
         const result = categoryProductState.find(item => String(item.id) === String(value))
         setCategoryName(String(result?.slug))
+        setIsSubCategory(result ? result.sub_category : false)
+    };
+
+    const onChangeSubCategory = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = e.target.value || ""
+        setSubCategoryId(value);
     };
 
     const onChangePage = async (page: number) => {
@@ -109,6 +121,7 @@ const ProductContent = () => {
         // Cập nhật params với page mới
         const newParams = new URLSearchParams(searchParams?.toString() || '');
         newParams.set('page', page.toString());
+        isSubCategory ? newParams.set('subCategory', '') : null;
 
         // Chỉ gọi router.push, API sẽ được gọi trong useEffect
         if (categoryId) {
@@ -126,6 +139,7 @@ const ProductContent = () => {
             const parsedPage = parseInt(page) || 1;
             const parsedLimit = parseInt(limit) || 10;
             const parsedSearch = search || "";
+            const parsedSubCategory = subCategory || "";
 
             // Tìm category dựa trên slug từ URL
             let currentCategoryId = categoryId;
@@ -136,7 +150,10 @@ const ProductContent = () => {
                 const categoryRes = categoryProductState.find(
                     item => String(item.slug) === String(params.slug)
                 );
-
+                if (categoryRes?.sub_category) {
+                    setIsSubCategory(categoryRes ? categoryRes.sub_category : false)
+                    setSubCategoryId(parsedSubCategory);
+                }
                 if (categoryRes) {
                     currentCategoryId = String(categoryRes.id);
                     currentCategoryName = String(categoryRes.slug);
@@ -155,7 +172,8 @@ const ProductContent = () => {
                 parsedSearch,
                 parsedLimit,
                 parsedPage,
-                currentCategoryId
+                currentCategoryId,
+                parsedSubCategory
             );
         };
 
@@ -166,6 +184,7 @@ const ProductContent = () => {
         limit,
         params.slug,
         categoryProductState,
+        subCategory
         // Chỉ chạy lại khi URL hoặc categoryProductState thay đổi
     ]);
 
@@ -174,6 +193,7 @@ const ProductContent = () => {
         setCurrentPage(1);
         setCategoryId('');
         setCategoryName('');
+        setSubCategoryId('');
         router.push(`${ROUTE_PATH.PRODUCT}`);
     }
 
@@ -192,37 +212,80 @@ const ProductContent = () => {
                         blackColor={true}
                     />
                     <div className={styles.productContent}>
-                        <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4">
-                            {/* Search Input */}
-                            <div className="sm:col-span-5">
-                                <InputSearchCommon
-                                    placeholder={'Tìm kiếm sản phẩm'}
-                                    value={searchText}
-                                    onChange={onChangeSearchText}
-                                    disabled={false}
-                                />
-                            </div>
+                        {
+                            isSubCategory
+                                ?
+                                <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4">
+                                    {/* Search Input */}
+                                    <div className="sm:col-span-4">
+                                        <InputSearchCommon
+                                            placeholder={'Tìm kiếm sản phẩm'}
+                                            value={searchText}
+                                            onChange={onChangeSearchText}
+                                            disabled={false}
+                                        />
+                                    </div>
+                                    {/* Category Select */}
+                                    <div className="sm:col-span-3">
+                                        <SelectSearchCommon
+                                            listDataOfItem={categoryProductState}
+                                            onChange={onChangeCategory}
+                                            label={"Danh mục sản phẩm"}
+                                            value={categoryId}
+                                            labelName="nameSplit"
+                                            valueName="id"
+                                        />
+                                    </div>
+                                    <div className="sm:col-span-3">
+                                        <SelectSearchCommon
+                                            listDataOfItem={subCategoryState}
+                                            onChange={onChangeSubCategory}
+                                            label={"Danh mục phụ"}
+                                            value={subCategoryId}
+                                            labelName="name"
+                                            valueName="id"
+                                        />
+                                    </div>
+                                    {/* Search Button */}
+                                    <div className="sm:col-span-2">
+                                        <ButtonCommon
+                                            onClick={onSearchParam}
+                                            title={'Tìm kiếm'}
+                                        />
+                                    </div>
+                                </div>
+                                :
+                                <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-4">
+                                    {/* Search Input */}
+                                    <div className="sm:col-span-5">
+                                        <InputSearchCommon
+                                            placeholder={'Tìm kiếm sản phẩm'}
+                                            value={searchText}
+                                            onChange={onChangeSearchText}
+                                            disabled={false}
+                                        />
+                                    </div>
+                                    {/* Category Select */}
+                                    <div className="sm:col-span-5">
+                                        <SelectSearchCommon
+                                            listDataOfItem={categoryProductState}
+                                            onChange={onChangeCategory}
+                                            label={"Danh mục sản phẩm"}
+                                            value={categoryId}
+                                            labelName="nameSplit"
+                                            valueName="id"
+                                        />
+                                    </div>
+                                    {/* Search Button */}
+                                    <div className="sm:col-span-2">
+                                        <ButtonCommon
+                                            onClick={onSearchParam}
+                                            title={'Tìm kiếm'}
+                                        />
+                                    </div>
+                                </div>
+                        }
 
-                            {/* Category Select */}
-                            <div className="sm:col-span-5">
-                                <SelectSearchCommon
-                                    listDataOfItem={categoryProductState}
-                                    onChange={onChangeCategory}
-                                    label={"Danh mục sản phẩm"}
-                                    value={categoryId}
-                                    labelName="nameSplit"
-                                    valueName="id"
-                                />
-                            </div>
-
-                            {/* Search Button */}
-                            <div className="sm:col-span-2">
-                                <ButtonCommon
-                                    onClick={onSearchParam}
-                                    title={'Tìm kiếm'}
-                                />
-                            </div>
-                        </div>
 
                         {/* Loading State */}
                         {

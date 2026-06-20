@@ -119,4 +119,7 @@ export class Endpoint {
         static Update = "/content-page"
         static Delete = "/content-page"
     }
+    static SubCategory = class {
+        static Get = "/sub-category"
+    }
 }

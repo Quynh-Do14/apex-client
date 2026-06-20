@@ -19,6 +19,7 @@ export interface ProductInterface {
     sameCategoryProducts: ProductInterface[]
     keyword: ProductKeyword[]
     slug: string
+    sub_category_id: string
 }
 
 export interface ProductFigure {
@@ -30,6 +31,9 @@ export interface ProductParams {
     limit?: number;
     search?: string;
     category_id?: string;
+    sub_category_id?: string
+    is_featured?: boolean
+
 }
 
 export interface ProductHref {
