@@ -9,6 +9,7 @@ import BannerCommon from '@/infrastructure/common/banner/BannerCommon'
 import InputTextCommon from '@/infrastructure/common/input/input-text-common'
 import contactService from '@/infrastructure/repository/contact/contact.service'
 import { useRouter } from 'next/navigation'
+import { FullPageLoading } from '@/infrastructure/common/loading/loading'
 
 const ContactPage = () => {
     const [loading, setLoading] = useState<boolean>(false)
@@ -157,6 +158,7 @@ const ContactPage = () => {
                     </button>
                 </form>
             </div>
+            <FullPageLoading isLoading={loading} />
         </ClientLayout>
     )
 }

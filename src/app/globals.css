@@ -1872,3 +1872,16 @@ body {
 table {
     border-collapse: collapse
 }
+
+.full-page-loading {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.801);
+  z-index: 99999;
+}
