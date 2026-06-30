@@ -1,0 +1,53 @@
+User-Agent: GPTBot
+User-Agent: ChatGPT-User
+User-Agent: CCBot
+User-Agent: OAI-SiteChecker
+User-Agent: anthropic-ai
+User-Agent: FacebookBot
+User-Agent: Claude-Web
+Disallow: /
+
+User-Agent: Googlebot
+Allow: /
+Allow: /tin-tuc/
+Allow: /san-pham/
+Allow: /dai-ly/
+Allow: /gioi-thieu
+Allow: /lien-he
+Allow: /chinh-sach/chinh-sach-bao-hanh-doi-tra-hang
+Allow: /chinh-sach/chinh-sach-bao-mat
+Allow: /chinh-sach/chinh-sach-giao-hang
+Allow: /chinh-sach/chinh-sach-mua-hang
+Allow: /chinh-sach/chinh-sach-thanh-toan
+Allow: /chinh-sach/thong-tin-ve-dieu-kien-giao-dich-chung
+Disallow: /api/
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /login/
+Disallow: /register/
+Disallow: /user/
+
+User-Agent: Google-Extended
+Disallow: /
+
+User-Agent: *
+Allow: /
+Allow: /tin-tuc/
+Allow: /san-pham/
+Allow: /dai-ly/
+Allow: /gioi-thieu
+Allow: /lien-he
+Allow: /chinh-sach/chinh-sach-bao-hanh-doi-tra-hang
+Allow: /chinh-sach/chinh-sach-bao-mat
+Allow: /chinh-sach/chinh-sach-giao-hang
+Allow: /chinh-sach/chinh-sach-mua-hang
+Allow: /chinh-sach/chinh-sach-thanh-toan
+Allow: /chinh-sach/thong-tin-ve-dieu-kien-giao-dich-chung
+Disallow: /api/
+Disallow: /admin/
+Disallow: /profile/
+Disallow: /login/
+Disallow: /register/
+Disallow: /user/
+
+Sitemap: https://apexauto.vn/sitemap.xml
