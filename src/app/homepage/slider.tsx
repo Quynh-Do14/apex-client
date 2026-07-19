@@ -158,7 +158,7 @@ const FullWidthSlider = () => {
             `}</style>
 
             {/* Main Slider */}
-            <Link href={ROUTE_PATH.PRODUCT} className={styles.sliderWrapper}>
+            <div className={styles.sliderWrapper}>
                 <Slider {...settings}>
                     {listBanner.map((slide: string, index: number) => (
                         <div key={index} className={styles.slideItem}>
@@ -174,7 +174,7 @@ const FullWidthSlider = () => {
                         </div>
                     ))}
                 </Slider>
-            </Link>
+            </div>
         </div >
     );
 };
